@@ -42,11 +42,10 @@
 
     <!-- Header -->
 		<!-- Heading Row -->
-		<br><br><br><br><br><br>
+		<br><br><br>
         <div class="row">
             <div class="col-md-8">
-                  <!-- Carousel
-    ================================================== -->
+                <!-- Carousel -->
 				<div class="bs-example">
 					<div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
 						<!-- Carousel indicators -->
@@ -78,8 +77,6 @@
 									<p>Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
 								</div>
 							</div>
-            
-
 						</div>
         
 						<!-- Carousel nav -->
@@ -103,11 +100,20 @@
 					<div class="panel-body">
                     
 					<form method="post" action="../config/check.php">
+                        <?php
+                            if (isset($_GET['msg'])) {
+                                if ($_GET['msg'] == 'err_login') {
+                                    ?>
+                           <div class="alert alert-warning alert-dismissible" role="alert">
+                              <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                              <strong>Maaf</strong>, Email dan Password Anda salah.
+                            </div>
+                            <?php }} ?>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-3 control-label">Email</label>
 							
 							<div class="col-sm-9">
-								<input type="text" class="form-control" placeholder="User name" name="user" required="require">					
+								<input type="text" class="form-control" placeholder="Email" name="user" required="require">					
 							</div>
 						</div>
 

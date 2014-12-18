@@ -1,5 +1,5 @@
 <?php
-require_once "connnection_.php";
+require_once "connection_.php";
 require_once "function.core.php";
 session_start();
 
@@ -9,8 +9,9 @@ $remember = $_POST['remember'];
 //$grade = $_POST['level'];
     
 if(isset($_POST['submit'])){
-    
-    $cek = $mysqli->query("SELECT * FROM tb_user WHERE username='$user' AND password='$pass'");
+    //echo $user; echo "<br>"; echo $pass;
+
+    $cek = $db->query("SELECT * FROM tb_user WHERE username='$user' AND password='$pass'");
     $k = $cek->num_rows;
 
     if($k==1)   {
@@ -33,20 +34,22 @@ if(isset($_POST['submit'])){
             if($level == '1'){
                 $_SESSION['user'] = $user;
                 $_SESSION['level'] = $level;
+                //header("Location: wew.php");
                 header("Location: ../beranda/index?msg=log_in&level=$level");
                 exit();
             }else{
                 $_SESSION['user'] = $user;
                 $_SESSION['level'] = $level;
+                //header("Location: wew.php");
                 header("Location: ../beranda/index?msg=log_in&level=$level");
                 exit();
             }
         }
 
-    } else {
-        echo "error";
-        //header("Location: index.php?val=2");
-        exit();
-    }
+} else {
+    //echo "error";
+    header("Location: ../index?msg=err_login");
+    exit();
+}
 }
 ?>

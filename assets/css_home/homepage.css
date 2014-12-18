@@ -328,7 +328,7 @@ width: 160px;
 }
 
 a.prev, a.next {
-	background: url(../images/miscellaneous_sprite.png) no-repeat transparent;
+	background: url(../images_home/miscellaneous_sprite.png) no-repeat transparent;
 	width: 45px;
 	height: 50px;
 	display: block;

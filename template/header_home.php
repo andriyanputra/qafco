@@ -70,7 +70,7 @@
 	
 	<style type="text/css">
             body {
-                background: url('img/bg.jpg') no-repeat center center fixed;
+                background: url('../assets/img_home/bg.jpg') no-repeat center center fixed;
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
                 -o-background-size: cover;
