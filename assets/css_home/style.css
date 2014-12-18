@@ -1,0 +1,230 @@
+#box_dasar{
+	width :100%;
+	height : 800px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top:10px;
+
+	background-image: url('../foto/bg.png');
+	background-position: center;
+}
+
+
+
+.trbg{
+	background-color: #c1d4fe;
+}
+.trbg2{
+	background-color: #90b1fc;
+}
+
+.trwrapper{
+	background-color: #c1e1ff;
+}
+
+legend{
+	border: 1px solid #CCC;
+}
+
+
+/* start bagian footer */
+footer{
+	border-top: 3px solid #ddd;
+	padding: 30px auto;
+	display: table;
+	width: 100%;
+	max-width: 100%;
+	margin: 40px auto;
+	font-size: 12px;
+}
+	footer a{
+		text-decoration: none;
+		color: #666;
+		padding: 2px;
+		border-bottom: 1px solid #ddd;
+	}
+		footer a:hover{
+			background: #ddd;
+		}
+
+	footer .content{
+		width: 100%;
+		display: table-row;
+		vertical-align: center;
+	}
+		footer .box{
+			display: table-cell;
+			padding: 10px;
+			width: 50%;
+		}
+
+			footer .box:nth-child(2){
+				text-align: right;
+			}
+					
+/* end bagian footer   */
+
+/* start membuat footer menjadi responsive  */
+
+@media (max-width: 860px){
+
+	section,
+	.gallery,
+	.testimonial,
+	footer{
+		width: 100%;
+	}
+	.gallery{
+		padding: 0;
+	}
+	.section .box:nth-child(1){
+		border-radius: 0;
+	}
+
+	footer{
+		text-align: center;
+	}
+	footer .box{
+		display: block;
+		width: 90%;
+	}
+
+}
+/* end membuat footer menjadi responsive  */
+
+
+
+
+/*  start update style new  */
+
+.logout{
+	color:#fff;
+	float:right;
+	margin-top:7px;
+	padding-top:7px;
+	padding-right:10px;
+	margin-right:10px;
+	height:35px;
+	width:139px;
+	background-image: url('../foto/Logout2.png');
+	background-repeat: repeat-x;	
+}
+
+.user{
+	float:right;
+	margin-top:3px;
+	padding-top:7px;
+	padding-right:10px;
+}
+.gbruser{
+	border:1px #fff solid;
+	border-radius:35px;
+	-moz-border-radius:35px;
+}
+
+.logoutmenu{
+	color:#ggg;
+	font-size:15px;
+	font-weight:bold;
+	float:left;
+	text-decoration:none;
+	margin-left:27px;	
+}
+
+.logoutmenu:hover{
+	color:#ggg;
+	text-decoration:none;
+}
+
+.usermenu{
+	color:#fff;
+	font-size:13px;
+	font-weight:bold;
+	float:left;
+	text-decoration:none;
+	margin-left:5px;
+}
+.usermenu:hover{
+	color:#9be6ff;
+	text-decoration:none;
+}
+
+/*  end update style new  */
+
+
+
+
+#login {
+  margin-top: 20px;
+}
+.panel-footer {
+  background: #fff;
+}
+.navbar-php-id {
+  background-color: #428bca;
+  border-color: #e7e7e7;
+}
+.navbar-php-id span {
+  color: #fff;
+}
+#menu, #konten {
+  margin-bottom: 20px;
+}
+.nav-parent > li, 
+.nav-parent > li:hover,
+.nav-parent > li > a, 
+.nav-parent > li > a:hover {
+  color: #fff;
+  background-color: #428bca;
+}
+.nav-parent > li {
+  border-radius: 0px;
+}
+.nav-child > li {
+  border-left: 1px solid #428bca;
+  border-bottom: 1px solid #428bca;
+}
+.nav-child > li > a,
+.nav-child > li > a:hover {
+  color: #333;
+  text-decoration: none;
+}
+.nav-child > li:not(:first-child) > a {
+  margin-top: -2px;
+}
+.nav-child > li:hover,
+.nav-child > .active {
+  border-right: 3px solid #428bca;
+}
+.nav-child > li > a:hover {
+  background: #fff;
+}
+.form-inline {
+  margin-bottom: 20px;
+}
+.panel-body > p {
+  text-align: justify;
+}
+textarea {
+  resize: none;
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  background-color: #fff;
+}
+
+.ponel{
+    height: 400px;
+    width: 300px;
+}
+
+.ponel-heding{
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.ponel-body > p {
+  text-align: justify;
+}
+

@@ -1,0 +1,20 @@
+@font-face {
+	font-family: 'museo100regular';
+	src: url('./museo100regular.eot');
+	src: local('museo100regular'), url('./museo100regular.woff') format('woff'), url('./museo100regular.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_14465">Text with this font applied</p> */
+.fontsforweb_fontid_museo {
+	font-family: 'museo100regular' !important;
+}
+
+@font-face {
+	font-family: 'gothic';
+	src: url('./gothic.ttf');
+	src: local('gothic'), url('./museo100regular.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_14465">Text with this font applied</p> */
+.fontsforweb_fontid_gothic {
+	font-family: 'gothic' !important;
+}
+/* Font downloaded from FontsForWeb.com */
