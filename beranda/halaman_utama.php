@@ -102,7 +102,7 @@
 						<span class="glyphicon glyphicon-lock"></span> Login</div>
 					<div class="panel-body">
                     
-					<form method="post" action="cek_login.php">
+					<form method="post" action="../config/check.php">
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-3 control-label">Email</label>
 							
@@ -115,7 +115,7 @@
 							<label for="inputPassword3" class="col-sm-3 control-label">Password</label>
                         
 							<div class="col-sm-9">															
-								 <input type="password" class="form-control" placeholder="Password" name="password" required="require">
+								 <input type="password" class="form-control" placeholder="Password" name="pass" required="require">
 							</div>
 						</div>
                     
@@ -123,7 +123,7 @@
 							<div class="col-sm-offset-3 col-sm-9">
 								<div class="checkbox">
 									<label>
-										<input type="checkbox"/>Remember me
+										<input type="checkbox" name="remember" />Remember me
 									</label>
 								</div>
 							</div>
@@ -131,7 +131,7 @@
                     
 						<div class="form-group">
 							<div class="col-sm-offset-3 col-sm-9">
-								<button type="submit" class="btn btn-primary btn-sm">Sign in</button>
+								<input type="submit" name="submit" class="btn btn-primary btn-sm" value="Sign In"/>
                                 <button type="reset" class="btn btn-default btn-sm">Reset</button>
 							</div>
 						</div>
