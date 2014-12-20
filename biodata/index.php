@@ -1,4 +1,21 @@
-<?php include "../config/connection.php"; ?>
+<?php
+    include "../config/connection.php";
+    session_start();
+
+    if(!isset($_SESSION['user']) && $_SESSION['level']!="2"){
+        header("Location: ../index?msg=err_login_1");
+        exit();
+    }
+    if(isset($_SESSION['level'])) {
+        //echo "".$_SESSION['user']." - ".$_SESSION['level']."";
+        $cek_login = mysql_query("SELECT * FROM tb_pegawai AS a INNER JOIN tb_user  AS b ON (a.kode_pegawai = b.kode_pegawai)
+                            WHERE (b.username = '". $_SESSION['user']."' AND b.kode_level_akses = '".$_SESSION['level']."')") or die("Query : ".mysql_error());
+        if ($cek_login == false) {
+            header('Location: ../index?msg=err_1');
+            exit();
+        }else if(mysql_num_rows($cek_login)){
+            $row = mysql_fetch_assoc($cek_login);
+            ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -34,28 +51,15 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
-                                <span>Jane Doe <i class="caret"></i></span>
+                                <span><?php echo $row['nm_pegawai']; ?><i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
-                                    <img src="../assets/img/avatar3.png" class="img-circle" alt="User Image" />
+                                    <img src="../img/avatar3.png" class="img-circle" alt="User Image" />
                                     <p>
-                                        Jane Doe - Web Developer
-                                        <small>Member since Nov. 2012</small>
+                                        <?php echo $row['nm_pegawai']; ?> - Staff PT. Qafco
                                     </p>
-                                </li>
-                                <!-- Menu Body -->
-                                <li class="user-body">
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Followers</a>
-                                    </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Sales</a>
-                                    </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Friends</a>
-                                    </div>
                                 </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
@@ -84,95 +88,191 @@
                                 <small>Overview</small>
                             </h1>
                             <ol class="breadcrumb">
-                                <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                                <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
                                 <li class="active">Biodata</li>
                             </ol>
                         </div>
                     </div>
                     <br>
-                    <!-- Main content -->
-                    <section class="content">
-                        <div class="row">
-                            <div class="col-xs-10 col-xs-offset-1">
-                                <form role="form">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Kode TKI:</label>
-                                                <input type="text" id="" name="kd_tki" class="form-control" placeholder="Kode TKI">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-4">
-                                            <div class="form-group">
-                                                <label>Nama Lengkap:</label>
-                                                <input type="email" id="" name="nama" class="form-control" placeholder="Nama Lengkap">
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <div class="form-group">
-                                                <label for="">Tempat Lahir:</label>
-                                                <input type="text" id="" name="tmpt_lahir" class="form-control" placeholder="Tempat Lahir">
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <div class="form-group">
-                                                <label>Tanggal Lahir:</label>
-                                                <div class="input-group">
-                                                    <div class="input-group-addon">
-                                                        <i class="fa fa-calendar"></i>
-                                                    </div>
-                                                    <input type="text" id="datemask" name="tgl_lahir" class="form-control" data-inputmask="dd/mm/yyyy" data-mask/>
-                                                </div><!-- /.input group -->
-                                            </div><!-- /.form group -->
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label>Alamat:</label>
-                                                <textarea class="form-control" rows="3" placeholder="Alamat..."></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                        <?php
-                                            $wilayah = mysql_query("select * from tb_wilayah group by nm_prov");
-                                            $prov = array();
-                                        ?>
-                                            <div class="form-group">
-                                                <label>Kecamatan:</label>
-                                                <div class="input-md">
-                                                    <select id="kec">
-                                                        <option value="">Pilih Kecamatan...</option>
-                                                        <?php while ($row = mysql_fetch_array($wilayah)): ?>
-                                                            <option value="<?= $row['kode_prov']; ?>"/><?php echo $row['nm_prov']; ?></option>
-                                                        <?php endwhile; ?>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4"></div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div><!-- /.row -->
-
-                        <!-- top row -->
-                        <div class="row">
-                            <div class="col-xs-12 connectedSortable">
-                            </div><!-- /.col -->
+                    <div class="row">
+                        <div class="col-md-3">
                         </div>
-                        <!-- /.row -->
-
-                        <!-- Main row -->
-                        <div class="row">
-
-                        </div><!-- /.row (main row) -->
-                    </section><!-- /.content -->
+                        <div class="col-md-9">
+                            <div class="pull-right">
+                                <script>
+                                    var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+                                    var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
+                                    var date = new Date();
+                                    var day = date.getDate();
+                                    var month = date.getMonth();
+                                    var thisDay = date.getDay(),
+                                            thisDay = myDays[thisDay];
+                                    var yy = date.getYear();
+                                    var year = (yy < 1000) ? yy + 1900 : yy;
+                                    document.write(thisDay + ', ' + day + ' ' + months[month] + ' ' + year);
+                                </script>
+                                , Pukul <span id="clock"></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!-- Main content -->
+                <section class="content">
+                    <!-- Main row -->
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <a class="btn btn-app bg-red">
+                                <i class="fa fa-male"></i> Personal Data
+                            </a>
+                            <a class="btn btn-app bg-green">
+                                <i class="fa fa-flag"></i> Pengetahuan Bahasa
+                            </a>
+                            <a class="btn btn-app bg-maroon">
+                                <i class="fa fa-pencil-square"></i> Skill
+                            </a>
+                            <a class="btn btn-app bg-orange">
+                                <i class="fa  fa-mail-reply"></i> Pekerjaan Sebelumnya
+                            </a>
+                            <a class="btn btn-app bg-navy">
+                                <i class="fa fa-folder-open"></i> Pengalaman
+                            </a>
+                        </div> 
+                    </div><!--/.row (main row) -->
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="row">
+                            <form role="form">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label>Kode TKI:</label>
+                                            <input type="text" id="" name="nama" class="form-control" placeholder="Kode TKI">               
+                                        </div>
+                                   
+                                        <div class="form-group">
+                                            <label>Nama Lengkap:</label>
+                                            <input type="text" id="" name="nama" class="form-control" placeholder="Nama Lengkap">               
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Alamat:</label>
+                                            <textarea class="form-control" rows="3" placeholder="Alamat..."></textarea>             
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="form-group">
+                                            <label for="preview_gambar">Foto:</label>
+                                            <input type="file" name="gambar" id="preview_gambar">
+                                        </div>
+                                        <img src="" id="gambar_nodin" width="200" alt="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Kecamatan:</label>
+                                    <div class="input-md">
+                                        <select id="kec">
+                                            <option value="">Pilih Kecamatan...</option>
+                                            <?php while ($row = mysql_fetch_array($wilayah)): ?>
+                                                <option value="<?= $row['kode_prov']; ?>"/><?php echo $row['nm_prov']; ?></option>
+                                            <?php endwhile; ?>
+                                        </select>
+                                    </div>              
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Tempat Lahir:</label>
+                                    <input type="text" id="" name="tmpt_lahir" class="form-control" placeholder="Tempat Lahir">                         
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Tanggal Lahir:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <input type="text" id="datemask" name="tgl_lahir" class="form-control" data-inputmask="dd/mm/yyyy" data-mask/>
+                                    </div><!-- /.input group -->                                
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Agama:</label>
+                                    <div class="input-md">
+                                        <select id="religion">
+                                            <option value="">Pilih Agama...</option>
+                                            <option value="1">Islam</option>
+                                            <option value="2">Kristen Protestan</option>
+                                            <option value="3">Katolik</option>
+                                            <option value="4">Hindu</option>
+                                            <option value="5">Buddha</option>
+                                            <option value="6">Kong Hu Cu</option>
+                                        </select>
+                                    </div>                              
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Jenis Kelamin:</label>
+                                    <div class="input-md">
+                                        <select id="religion">
+                                            <option value="">Pilih Jenis Kelamin...</option>
+                                            <option value="1">Laki-Laki</option>
+                                            <option value="1">Perempuan</option>
+                                        </select>
+                                    </div>                              
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Pendidikan:</label>
+                                    <input type="text" id="" name="nama" class="form-control" placeholder="Pendidikan">                             
+                                </div>
+
+                                <div class="form-group">
+                                    <label>No. KTP:</label>
+                                    <input type="text" id="" name="nama" class="form-control" placeholder="Nomor KTP">                              
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Tinggi Badan:</label>
+                                    <input type="text" id="" name="nama" class="form-control" placeholder="Tinggi Badan (CM)">                              
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Berat Badan:</label>
+                                    <input type="text" id="" name="nama" class="form-control" placeholder="Berat Badan (KG)">                               
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Status Nikah:</label>
+                                    <input type="text" id="" name="nama" class="form-control" placeholder="Status Nikah">                                   
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Jumlah Anak:</label>
+                                    <input type="text" id="" name="nama" class="form-control" placeholder="Jumlah Anak">                                
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Nama Bapak:</label>
+                                    <input type="text" id="" name="nama" class="form-control" placeholder="Nama Bapak">                                 
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Nama Ibu:</label>
+                                    <input type="text" id="" name="nama" class="form-control" placeholder="Nama Ibu">                               
+                                </div>
+                                
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Check me out
+                                    </label>
+                                </div>
+
+                                <div class="box-footer">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section><!-- /.content -->
             </div><!-- /.row -->
         </div><!-- ./wrapper -->
 
@@ -186,8 +286,10 @@
         <!-- AdminLTE for demo purposes -->
         <script src="../assets/js/AdminLTE/demo.js" type="text/javascript"></script>
         <!--Select2-->
-        <<script src="../assets/js/select2.js" type="text/javascript"></script>
-        <<script src="../assets/js/select2.min.js" type="text/javascript"></script>
+        <script src="../assets/js/select2.js" type="text/javascript"></script>
+        <script src="../assets/js/select2.min.js" type="text/javascript"></script>
+        <!--image upload-->
+        <script src="../assets/js/jquery.preimage.js" type="text/javascript"></script>
          <!-- InputMask -->
         <script src="../assets/js/plugins/input-mask/jquery.inputmask.js" type="text/javascript"></script>
         <script src="../assets/js/plugins/input-mask/jquery.inputmask.date.extensions.js" type="text/javascript"></script>
@@ -197,8 +299,64 @@
                 //Datemask dd/mm/yyyy
                 $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
                 //Select2 
-                $(document).ready(function() { $("#kec").select2(); });       
+                $(document).ready(function() { $("#kec").select2(); });
+                //image upload
+                function bacaGambar(input) {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+
+                        reader.onload = function (e) {
+                            $('#gambar_nodin').attr('src', e.target.result);
+                        }
+
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+
+                $("#preview_gambar").change(function(){
+                    bacaGambar(this);
+                });
+                //waktu
+                // ========================Jam========================================== //
+                function showTime() {
+                    var a_p = "";
+                    var today = new Date();
+                    var curr_hour = today.getHours();
+                    var curr_minute = today.getMinutes();
+                    var curr_second = today.getSeconds();
+                    if (curr_hour < 12) {
+                        a_p = "AM";
+                    } else {
+                        a_p = "PM";
+                    }
+                    if (curr_hour == 0) {
+                        curr_hour = 12;
+                    }
+                    if (curr_hour > 12) {
+                        curr_hour = curr_hour - 12;
+                    }
+                    curr_hour = checkTime(curr_hour);
+                    curr_minute = checkTime(curr_minute);
+                    curr_second = checkTime(curr_second);
+                    document.getElementById('clock').innerHTML = curr_hour + ":" + curr_minute + ":" + curr_second + " " + a_p;
+                }
+
+                function checkTime(i) {
+                    if (i < 10) {
+                        i = "0" + i;
+                    }
+                    return i;
+                }
+                setInterval(showTime, 500);
+                // ========================Akhir Jam========================================== //       
             });    
         </script>
     </body>
 </html>
+<?php
+}
+}else{
+    header('Location: ../index?msg=err_login_1');
+    exit();
+}
+?>
