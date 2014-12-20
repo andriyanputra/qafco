@@ -16,40 +16,25 @@ if(isset($_POST['submit'])){
 
     if($k==1)   {
         $c = $cek->fetch_array();
-        $level = $c['kode_level_akses'];
-
-        if ($remember == "1") {
-            if($level == '1'){
-                setcookie('user', $user, time()+7200);
-                setcookie('level', $level, time()+7200);
-                header("Location: ../beranda/index?msg=log_in&level=$level");
-                exit();
-            }else{
-                setcookie('user', $user, time()+7200);
-                setcookie('level', $level, time()+7200);
-                header("Location: ../beranda/index?msg=log_in&level=$level");
-                exit();
-            }
-        }else{
-            if($level == '1'){
-                $_SESSION['user'] = $user;
-                $_SESSION['level'] = $level;
-                //header("Location: wew.php");
-                header("Location: ../beranda/index?msg=log_in&level=$level");
-                exit();
-            }else{
-                $_SESSION['user'] = $user;
-                $_SESSION['level'] = $level;
-                //header("Location: wew.php");
-                header("Location: ../beranda/index?msg=log_in&level=$level");
-                exit();
-            }
-        }
-
-} else {
-    //echo "error";
-    header("Location: ../index?msg=err_login");
-    exit();
-}
+        $level_ = $c['kode_level_akses'];
+        $user_ = $c['username'];
+        $pass_ = $c['password'];
+        //echo $user_; echo "<br>"; echo $level_;        
+        $_SESSION['user'] = $c['username'];
+        $_SESSION['pass'] = $c['password'];
+        $_SESSION['level'] = $c['kode_level_akses'];
+        //setcookie('user', $_SESSION['user'], time()+7200);
+       
+        if($c['username']=="$user_" && $c['password']=="$pass_" && $c['kode_level_akses']=="$level_" && $c['kode_level_akses']=="1"){
+            header("Location: ../beranda/index?msg=log_in&level=$level_"); //Halaman redirect untuk admin
+            exit();   
+        } else if($c['username']=="$user_" && $c['password']=="$pass_" && $c['kode_level_akses']=="$level_" && $c['kode_level_akses']=="2"){
+            header("Location: ../beranda/index?msg=log_in&level=$level_"); //Halaman redirect untuk majikan
+            exit(); 
+        } 
+    } else {
+        header("Location: ../index?msg=err_login");
+        exit();
+    }
 }
 ?>

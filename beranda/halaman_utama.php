@@ -60,17 +60,37 @@
 						<div class="carousel-inner">
 							<div class="active item">	
 								<div>
-									<img src="../assets/foto_home/bg1.jpg" alt="Generic placeholder image">
+									<img src="../assets/images_home/demo/11_b.jpg" alt="Generic placeholder image">
 								</div>
 								<div class="carousel-caption">
-									<h3>First slide label</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+									<h3>Making Bad</h3>
+									<p>Salah satu bentuk pelatihan BLK PT. QAFCO.</p>
 								</div>
 							</div>
+
+                            <div class="item">   
+                                <div>
+                                    <img src="../assets/images_home/demo/12_b.jpg" alt="Generic placeholder image">
+                                </div>
+                                <div class="carousel-caption">
+                                    <h3>First slide label</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+
+                            <div class="item">   
+                                <div>
+                                    <img src="../assets/images_home/demo/2_b.jpg" alt="Generic placeholder image">
+                                </div>
+                                <div class="carousel-caption">
+                                    <h3>First slide label</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
            
 							<div class="item">
 								<div>
-									<img src="../assets/foto_home/bg2.jpg" alt="Generic placeholder image">
+									<img src="../assets/images_home/demo/4_b.jpg" alt="Generic placeholder image">
 								</div>
 								<div class="carousel-caption">
 									<h3>Second slide label</h3>
@@ -99,16 +119,25 @@
 						<span class="glyphicon glyphicon-lock"></span> Login</div>
 					<div class="panel-body">
                     
-					<form method="post" action="../config/check.php">
+					<form method="post" action="../config/check.php" autocomplete="off">
                         <?php
                             if (isset($_GET['msg'])) {
                                 if ($_GET['msg'] == 'err_login') {
                                     ?>
-                           <div class="alert alert-warning alert-dismissible" role="alert">
-                              <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                              <strong>Maaf</strong>, Email dan Password Anda salah.
-                            </div>
-                            <?php }} ?>
+                               <div class="alert alert-warning alert-dismissible" role="alert">
+                                  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                  <strong>Maaf</strong>, Email dan Password Anda salah.
+                                </div>
+                            <?php }else if($_GET['msg'] == 'err_login_1'){
+                                ?>
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                  <strong>Maaf</strong>, Anda tidak diperkenankan mengakses halaman tersebut.
+                                </div>
+                                <?php
+                                }
+                            } 
+                            ?>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-3 control-label">Email</label>
 							
@@ -124,17 +153,9 @@
 								 <input type="password" class="form-control" placeholder="Password" name="pass" required="require">
 							</div>
 						</div>
-                    
-						<div class="form-group">
-							<div class="col-sm-offset-3 col-sm-9">
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" name="remember" />Remember me
-									</label>
-								</div>
-							</div>
-						</div>
-                    
+        
+                        <label></label>
+						
 						<div class="form-group">
 							<div class="col-sm-offset-3 col-sm-9">
 								<input type="submit" name="submit" class="btn btn-primary btn-sm" value="Sign In"/>
