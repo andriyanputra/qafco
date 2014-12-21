@@ -185,19 +185,25 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-				<div class="text-right">
-                    <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  
+                <div class="col-lg-6 col-lg-offset-3">
+				<div class="text-center">
+                    <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PT QAFCO adalah perusahaan jasa penempatan Tenaga Kerja Indonesia ke Luar Negeri yang berizinkan 
+KEPMENNAKERTRANS No: 558 tahun 2012. Tanpa biaya awal, sitem potong gaji.
+Negara - negara untuk penempatan Tenaga Kerja Indonesia adalah sebagai berikut :
+- Malaysia.
+- Singapore.
+- Hongkong.
+- Taiwan.  
                     </p>
                 </div>
 				</div>
 				
-                <div class="col-lg-4">
+                <!--<div class="col-lg-4">
 				<div class="text-left">
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
                     </p>
                 </div>
-				</div>
+				</div>-->
 				
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <a href="#" class="btn btn-lg btn-outline">Read more. . .</a>
@@ -214,8 +220,8 @@
                     <div class="row centero text-center">
                         <div class="col-md-4">
                             <div class="person">
-                                <img class="img-circle" src="../assets/img_home/bd1.jpg">
-                                <h3 class="fontsforweb_fontid_museo">	FLEXIBEL</h3>
+                                <img class="img-circle" src="../assets/images_home/demo/4_b.jpg">
+                                <h3 class="fontsforweb_fontid_museo">PROFESSIONAL</h3>
                                 <center><p>&nbsp;&nbsp;&nbsp;&nbsp; Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                 </center>
                             </div>
@@ -223,8 +229,8 @@
 
                         <div class="col-md-4">
                             <div class="person">
-                                <img class="img-circle" src="../assets/img_home/bd2.jpg">
-                                <h3 class="fontsforweb_fontid_museo">PRIZE</h3>
+                                <img class="img-circle" src="../assets/images_home/demo/10_b.jpg">
+                                <h3 class="fontsforweb_fontid_museo">SUITABLE</h3>
                                 <center><p>&nbsp;&nbsp;&nbsp;&nbsp; Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                 </center>
                             </div>
@@ -232,7 +238,7 @@
 
                         <div class="col-md-4">
                             <div class="person">
-                                <img class="img-circle" src="../assets/img_home/bd5.jpg">
+                                <img class="img-circle" src="../assets/images_home/demo/1_b.jpg">
                                 <h3 class="fontsforweb_fontid_museo">QUALITY</h3>
                                 <center><p>&nbsp;&nbsp;&nbsp;&nbsp; Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                 </center>
@@ -274,7 +280,7 @@
     <!-- Contact Section -->
         <section id="contact">
             <div class="container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3956.191145651942!2d112.7182709!3d-7.444092500000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e6b47f282b05%3A0xb5d9b352277c2eed!2sJalan+Sultan+Agung%2C+Sidoarjo%2C+61219!5e0!3m2!1sid!2sid!4v1412905634914" 
+               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3952.875206038845!2d112.04466400000001!3d-7.803033999999999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwNDgnMTAuOSJTIDExMsKwMDInNDAuOCJF!5e0!3m2!1sid!2ssg!4v1419165857145"
                         width="1150" height="450" frameborder="0" style="border:0">
                 </iframe>
             </div>

@@ -36,7 +36,7 @@
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header bg-light-blue">
-                                <img src="../img/avatar3.png" class="img-circle" alt="User Image" />
+                                <img src="../assets/img/avatar5.png" class="img-circle" alt="User Image" />
                                 <p>
                                     <?php echo $row['nm_pegawai']; ?> - Staff PT. Qafco
                                 </p>
@@ -47,7 +47,7 @@
                                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    <a href="../config/logout" class="btn btn-default btn-flat">Sign out</a>
                                 </div>
                             </li>
                         </ul>
@@ -117,6 +117,7 @@
                                 <?php echo $row['nm_pegawai']; ?> dalam sistem informasi PJTKI dari PT. Qafco.
                             </div>
                             <?php }} ?>
+                            <?php if($row['kode_level_akses'] == '1'){ ?>
                             <div class="col-lg-3 col-md-3 ">
                                 <!-- small box -->
                                 <div class="small-box bg-red">
@@ -193,6 +194,48 @@
                                     </a>
                                 </div>
                             </div><!-- ./col -->
+                            <?php }else{?>
+                            <div class="col-md-3"></div>
+                            <div class="col-lg-3 col-md-3">
+                                <!-- small box -->
+                                <div class="small-box bg-maroon">
+                                    <div class="inner">
+                                        <h3>
+                                            <i class="fa fa-money"></i>
+                                        </h3>
+                                        <p>
+                                            Keuangan
+                                        </p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa fa-briefcase"></i>
+                                    </div>
+                                    <a href="#" class="small-box-footer">
+                                        Lanjutkan <i class="fa fa-arrow-circle-right"></i>
+                                    </a>
+                                </div>
+                            </div><!-- ./col -->
+                            <div class="col-lg-3 col-md-3">
+                                <!-- small box -->
+                                <div class="small-box bg-green">
+                                    <div class="inner">
+                                        <h3>
+                                            <i class="fa fa-bar-chart-o"></i>
+                                        </h3>
+                                        <p>
+                                            Laporan
+                                        </p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="ion ion-pie-graph"></i>
+                                    </div>
+                                    <a href="#" class="small-box-footer">
+                                        Lanjutkan <i class="fa fa-arrow-circle-right"></i>
+                                    </a>
+                                </div>
+                            </div><!-- ./col -->
+                            <div class="col-md-3"></div>
+                            <?php } ?>
                         </div>
                     </div><!-- /.row -->
 
@@ -218,12 +261,9 @@
                         <div class="box-body">
                             <dl>
                                 <dt>Kontak</dt>
-                                <dd>A description list is perfect for defining terms.</dd>
-                                <dd>Euismod</dd>
-                                <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                                <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                                <dd>Malesuada porta</dd>
-                                <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                                <dd>No. Telp: (0354)-7418094, Fax: 7418094.</dd>
+                                <dd>Email: mail_qafco@qafco.com</dd>
+                                <dd>Website: ptqafco.com</dd>
                             </dl>
                         </div><!-- /.box-body -->
                     </div><!-- ./col-md-6 -->
@@ -233,12 +273,9 @@
                         <div class="box-body">
                             <dl>
                                 <dt>Lokasi</dt>
-                                <dd>A description list is perfect for defining terms.</dd>
-                                <dd>Euismod</dd>
-                                <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                                <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                                <dd>Malesuada porta</dd>
-                                <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                                <dd>Jalan Puskesmas 509. Kode Pos: 64182</dd>
+                                <dd>Desa Ngasem, Kec. Ngasem, Kediri</dd>
+                                <dd>Jawa Timur, Indonesia</dd>
                             </dl>
                         </div><!-- /.box-body -->
                     </div><!-- ./col-md-6 -->

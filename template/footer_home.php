@@ -5,10 +5,10 @@
                     <div class="row">
                         <div class="footer-col col-md-4">
                             <h3>Location</h3>
-                            <p class="fontsforweb_fontid_museo"> <b>MANAGER PT QAFCO</b> 
-                                <br> Jl. Achmad Yani  
-                                <br> No. 19, Gresik (61219)
-                                <br> <img src="../assets/img_home/tp.png"/> Telp. / Fax : (031) 8953008</p>
+                            <p class="fontsforweb_fontid_museo"> <b>PT. QAFCO</b> 
+                                <br> Jl. Puskesmas 509 Ds. Ngasem
+                                <br> Kec. Ngasem, Kota Kediri (64182)
+                                <br> <img src="../assets/img_home/tp.png"/> Telp. / Fax : (0354)-7418094</p>
                         </div>
                         <div class="footer-col col-md-4">
                             <div class="hidden-xs">
@@ -16,8 +16,8 @@
                             </div>
                         </div>
                         <div class="footer-col col-md-4">
-							<h3>About PT QAFCO PLAN</h3>
-							<p>PT QAFCO merupakan salah satu perusahaan dari.. <a href="#">qafco_gresik.com</a>.</p>
+							<h3>About PT QAFCO</h3>
+							<p>PT QAFCO merupakan perusahaan jasa penempatan Tenaga Kerja Indonesia ke Luar Negeri.. <a href="#">ptqafco.com</a>.</p>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            Copyright &copy; PT QAFCO - GRESIK 2014
+                            Copyright &copy; PT QAFCO - KEDIRI 2014
                         </div>
                     </div>
                 </div>

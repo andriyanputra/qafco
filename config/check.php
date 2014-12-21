@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
         $_SESSION['user'] = $c['username'];
         $_SESSION['pass'] = $c['password'];
         $_SESSION['level'] = $c['kode_level_akses'];
-        //setcookie('user', $_SESSION['user'], time()+7200);
+        setcookie('user', $_SESSION['user'], time()+7200);
        
         if($c['username']=="$user_" && $c['password']=="$pass_" && $c['kode_level_akses']=="$level_" && $c['kode_level_akses']=="1"){
             header("Location: ../beranda/index?msg=log_in&level=$level_"); //Halaman redirect untuk admin
