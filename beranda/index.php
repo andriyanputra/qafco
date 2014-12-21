@@ -19,7 +19,7 @@
 ?>
     <!-- header logo: style can be found in header.less -->
     <header class="header">
-        <a href="index.php" class="logo">
+        <a href="index" class="logo">
             <!-- Add the class icon to your logo image or logo icon to add the margining -->
             PT. QAFCO
         </a>
@@ -245,11 +245,6 @@
                         </div><!-- /.col -->
                     </div>
                     <!-- /.row -->
-
-                    <!-- Main row -->
-                    <div class="row">
-
-                    </div><!-- /.row (main row) -->
                 </section><!-- /.content -->
             </div>
         </div><!-- /.row -->
@@ -282,6 +277,13 @@
                 </div><!-- /.box -->
             </div><!-- ./col -->
         </div>
+        <footer>
+            <div class="row">
+                <div class="col-sm-6 col-md-offset-3 text-center">
+                    Copyright © PT QAFCO - KEDIRI 2014
+                </div>
+            </div>
+        </footer>
     </div><!-- ./wrapper -->
 <?php
     include "../template/footer.php";
