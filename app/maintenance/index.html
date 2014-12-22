@@ -1,0 +1,105 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>PT. QAFCO</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<!-- font Awesome -->
+<link href="../../assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<!-- Ionicons -->
+<link href="../../assets/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/style.css" media="all" type="text/css">
+<link rel="icon" href="../../assets/img/favicon.ico" type="image/x-generic">
+<link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+<!-- Bootstrap -->
+<script src="../../assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript" language="javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var theDaysBox  = $("#numdays");
+	var theHoursBox = $("#numhours");
+	var theMinsBox  = $("#nummins");
+	var theSecsBox  = $("#numsecs");
+	
+	var refreshId = setInterval(function() {
+	  var currentSeconds = theSecsBox.text();
+	  var currentMins    = theMinsBox.text();
+	  var currentHours   = theHoursBox.text();
+	  var currentDays    = theDaysBox.text();
+	  
+	  if(currentSeconds == 0 && currentMins == 0 && currentHours == 0 && currentDays == 0) {
+	  	// if everything rusn out our timer is done!!
+	  	// do some exciting code in here when your countdown timer finishes
+	  	
+	  } else if(currentSeconds == 0 && currentMins == 0 && currentHours == 0) {
+	  	// if the seconds and minutes and hours run out we subtract 1 day
+	  	theDaysBox.html(currentDays-1);
+	  	theHoursBox.html("23");
+	  	theMinsBox.html("59");
+	  	theSecsBox.html("59");
+	  } else if(currentSeconds == 0 && currentMins == 0) {
+	  	// if the seconds and minutes run out we need to subtract 1 hour
+	  	theHoursBox.html(currentHours-1);
+	  	theMinsBox.html("59");
+	  	theSecsBox.html("59");
+	  } else if(currentSeconds == 0) {
+	  	// if the seconds run out we need to subtract 1 minute
+	  	theMinsBox.html(currentMins-1);
+	  	theSecsBox.html("59");
+	  } else {
+      	theSecsBox.html(currentSeconds-1);
+      }
+   }, 1000);
+});
+</script>
+</head>
+<body>
+<div class="wrap">
+	<h1>PT. QAFCO</h1>
+<div class="main">
+	<h2>website kami dalam proses maintenance</h2>
+	<div class="banner">
+		<img src="images/banner.png" alt="" />
+	</div>
+	<div class="text">
+		<h3>Kami akan kembali secepatnya,&nbsp;<span>Diperkirakan waktu yang dibutuhkan...!</span></h3>
+		<div class	="clock-ticker" class="clearfix">
+			<div class="block">
+				<span class="flip-top" id="numdays">8</span>
+				<span class="flip-btm"></span>
+				<footer class="label">Hari</footer>
+			</div>
+			<div class="block">
+				<span class="flip-top" id="numhours">14</span>
+				<span class="flip-btm"></span>
+				<footer class="label">Jam</footer>
+			</div>
+			<div class="block">
+				<span class="flip-top" id="nummins">34</span>
+				<span class="flip-btm"></span>
+				<footer class="label">Menit</footer>
+			</div>
+			<div class="block">
+				<span class="flip-top" id="numsecs">9</span>
+				<span class="flip-btm"></span>
+				<footer class="label">Detik</footer>
+			</div>
+		</div>
+		<button type="button" class="btn btn-danger btn-flat" onclick="window.history.back();">Kembali</button>
+	</div>
+	<div class="clear"></div>
+</div>
+<div class="footer">
+	<p>Copyright © PT QAFCO - KEDIRI 2014</p>
+</div>
+</div>
+</body>
+</html>
+
