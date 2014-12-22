@@ -26,10 +26,10 @@ if(isset($_POST['submit'])){
         setcookie('user', $_SESSION['user'], time()+7200);
        
         if($c['username']=="$user_" && $c['password']=="$pass_" && $c['kode_level_akses']=="$level_" && $c['kode_level_akses']=="1"){
-            header("Location: ../beranda/index?msg=log_in&level=$level_"); //Halaman redirect untuk admin
+            header("Location: ../app/beranda/index?msg=log_in&level=$level_"); //Halaman redirect untuk admin
             exit();   
         } else if($c['username']=="$user_" && $c['password']=="$pass_" && $c['kode_level_akses']=="$level_" && $c['kode_level_akses']=="2"){
-            header("Location: ../beranda/index?msg=log_in&level=$level_"); //Halaman redirect untuk majikan
+            header("Location: ../app/beranda/index?msg=log_in&level=$level_"); //Halaman redirect untuk majikan
             exit(); 
         } 
     } else {
