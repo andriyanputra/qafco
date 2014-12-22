@@ -122,7 +122,7 @@
                             <?php if($row['kode_level_akses'] == '1'){ ?>
                             <div class="col-lg-3 col-md-3 ">
                                 <!-- small box -->
-                                <div class="small-box bg-red">
+                                <div class="small-box bg-red" data-toggle="tooltip" title="Data TKI">
                                     <div class="inner">
                                         <h3>
                                             <i class="fa fa-male"></i>
@@ -141,7 +141,7 @@
                             </div><!-- ./col -->
                             <div class="col-lg-3 col-md-3 ">
                                     <!-- small box -->
-                                    <div class="small-box bg-aqua">
+                                    <div class="small-box bg-aqua" data-toggle="tooltip" title="Keuangan">
                                         <div class="inner">
                                             <h3>
                                                 <i class="fa fa-money"></i>
@@ -160,7 +160,7 @@
                             </div><!-- ./col -->
                             <div class="col-lg-3 col-md-3 ">
                                 <!-- small box -->
-                                <div class="small-box bg-green">
+                                <div class="small-box bg-green" data-toggle="tooltip" title="Laporan">
                                     <div class="inner">
                                         <h3>
                                             <i class="fa fa-bar-chart-o"></i>
@@ -179,7 +179,7 @@
                             </div><!-- ./col -->
                             <div class="col-lg-3 col-md-3 ">
                                 <!-- small box -->
-                                <div class="small-box bg-maroon">
+                                <div class="small-box bg-maroon" data-toggle="tooltip" title="Master Data">
                                     <div class="inner">
                                         <h3>
                                             <i class="fa fa-folder-open-o"></i>
@@ -200,7 +200,7 @@
                             <div class="col-md-3"></div>
                             <div class="col-lg-3 col-md-3">
                                 <!-- small box -->
-                                <div class="small-box bg-maroon">
+                                <div class="small-box bg-maroon" data-toggle="tooltip" title="Keuangan">
                                     <div class="inner">
                                         <h3>
                                             <i class="fa fa-money"></i>
@@ -219,7 +219,7 @@
                             </div><!-- ./col -->
                             <div class="col-lg-3 col-md-3">
                                 <!-- small box -->
-                                <div class="small-box bg-green">
+                                <div class="small-box bg-green" data-toggle="tooltip" title="Laporan">
                                     <div class="inner">
                                         <h3>
                                             <i class="fa fa-bar-chart-o"></i>

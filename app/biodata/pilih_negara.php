@@ -123,7 +123,7 @@
                             <?php if($row['kode_level_akses'] == '1'){ ?>
                             <div class="col-lg-3 col-md-6 col-md-offset-1">
                                 <!-- small box -->
-                                <div class="small-box bg-yellow">
+                                <div class="small-box bg-yellow" data-toggle="tooltip" title="Malaysia">
                                     <div class="inner">
                                         <h3>
                                             <img src="../../assets/img/Malaysia.png" class="img-circle"/>
@@ -142,7 +142,7 @@
                             </div><!-- ./col -->
                             <div class="col-lg-3 col-md-6 col-md-offset-1">
                                 <!-- small box -->
-                                <div class="small-box bg-red">
+                                <div class="small-box bg-red" data-toggle="tooltip" title="Singapura">
                                     <div class="inner">
                                         <h3>
                                             <img src="../../assets/img/Singapore.png" class="img-circle"/>
@@ -161,7 +161,7 @@
                             </div><!-- ./col -->
                             <div class="col-lg-3 col-md-6 col-md-offset-1">
                                 <!-- small box -->
-                                <div class="small-box bg-green">
+                                <div class="small-box bg-green" data-toggle="tooltip" title="Timur Tengah">
                                     <div class="inner">
                                         <h3>
                                             <img src="../../assets/img/timur_tengah.png" class="img-circle"/>
@@ -182,7 +182,7 @@
                         <div class="col-md-10 col-md-offset-1">
                             <div class="col-lg-3 col-md-6 col-md-offset-3">
                                 <!-- small box -->
-                                <div class="small-box bg-maroon">
+                                <div class="small-box bg-maroon" data-toggle="tooltip" title="Taiwan">
                                     <div class="inner">
                                         <h3>
                                             <img src="../../assets/img/Taiwan.png" class="img-circle"/>
@@ -201,7 +201,7 @@
                             </div><!-- ./col -->
                             <div class="col-lg-3 col-md-6 col-md-offset-1">
                                 <!-- small box -->
-                                <div class="small-box bg-navy">
+                                <div class="small-box bg-navy" data-toggle="tooltip" title="Hongkong">
                                     <div class="inner">
                                         <h3>
                                             <img src="../../assets/img/Hong Kong.png" class="img-circle"/>

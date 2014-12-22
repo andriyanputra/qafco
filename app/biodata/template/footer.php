@@ -15,6 +15,9 @@
         <script src="../../assets/js/plugins/input-mask/jquery.inputmask.extensions.js" type="text/javascript"></script>
         <!--autonumeric-->
         <script src="../../assets/js/autoNumeric.js"></script>
+        <!-- VALIDASI -->
+        <script type="text/javascript" src="../../assets/js/validate.min.js"></script>
+
         <script type="text/javascript">
         //TAB
             function toggle_visibility(id) {
@@ -136,6 +139,77 @@
                     });
                 });
             });
+        </script>
+        <script type="text/javascript">
+            var validator = new FormValidator('myform', [{
+                name: 'kode',
+                display: 'required',
+                rules: 'required'
+            }, {
+                name: 'nama',
+                rules: 'alpha_numeric|required'
+            }, {
+                name: 'tmpt_lahir',
+                rules: 'required'
+            }, {
+                name: 'tgl_lahir',
+                rules: 'required'
+            }, {
+                name: 'foto',
+                rules: 'is_file_type[png,jpg]|required'
+            }, {
+                name: 'alamat',
+                rules: 'required'
+            },{
+                name: 'prov',
+                rules: 'required'
+            },{
+                name: 'kab',
+                rules: 'required'
+            },{
+                name: 'kec',
+                rules: 'required'
+            },{
+                name: 'agama',
+                rules: 'required'
+            },{
+                name: 'jenis',
+                rules: 'required'
+            },{
+                name: 'pendidikan',
+                rules: 'required'
+            },{
+                name: 'no_ktp',
+                rules: 'required'
+            },{
+                name: 'tinggi_badan',
+                rules: 'required'
+            },{
+                name: 'berat_badan',
+                rules: 'required'
+            },{
+                name: 'nikah',
+                rules: 'required'
+            },{
+                name: 'jml_anak',
+                rules: 'required'
+            },{
+                name: 'bpk',
+                rules: 'required'
+            },{
+                name: 'ibu',
+                rules: 'required'
+            }], function(errors, event) {
+                if (errors.length > 0) {
+                    var errorString = '';
+
+                    for (var i = 0, errorLength = errors.length; i < errorLength; i++) {
+                        errorString += errors[i].message + '<br />';
+                    }
+
+                    el.innerHTML = errorString;
+                }
+            });    
         </script>
     </body>
 </html>

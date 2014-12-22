@@ -3,7 +3,7 @@
     session_start();
 
     if(!isset($_SESSION['user']) && $_SESSION['level']!="2"){
-        header("Location: ../index?msg=err_login_1");
+        header("Location: ../beranda/index?msg=err_login_1");
         exit();
     }
     if(isset($_SESSION['level'])) {
@@ -70,29 +70,38 @@
                     <!-- Main row -->
                     <div class="row">
                         <div class="col-md-7 col-md-offset-2 centered">
-                            <a href="#"onclick="toggle_visibility('personal')" class="btn btn-app bg-red">
+                        <?php if (isset($_GET['msg'])) {
+                                if ($_GET['msg'] == 'err_data') {
+                                    ?>
+                               <div class="alert alert-danger alert-dismissable">
+                                    <i class="fa fa-ban"></i>
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    <b>Alert!</b> Maaf terjadi kesalahan proses input data, mohon untuk lebih teliti dalam input data.
+                                </div>
+                            <?php } }?>
+                            <a href="#" onclick="toggle_visibility('personal');" class="btn btn-app bg-red" data-toggle="tooltip" title="Personal Data">
                                 <i class="fa fa-male"></i> Personal Data
                             </a>
-                            <a href="#" onclick="toggle_visibility('bahasa');" class="btn btn-app bg-green">
+                            <a href="#" onclick="toggle_visibility('bahasa');" class="btn btn-app bg-green" data-toggle="tooltip" title="Bahasa">
                                 <i class="fa fa-flag"></i> Bahasa
                             </a>
-                            <a href="#" onclick="toggle_visibility('kemampuan');" class="btn btn-app bg-purple">
+                            <a href="#" onclick="toggle_visibility('kemampuan');" class="btn btn-app bg-purple" data-toggle="tooltip" title="Kemampuan">
                                 <i class="fa fa-pencil-square"></i> Kemampuan
                             </a>
-                            <a href="#" onclick="toggle_visibility('job');" class="btn btn-app bg-orange">
+                            <a href="#" onclick="toggle_visibility('job');" class="btn btn-app bg-orange" data-toggle="tooltip" title="Pekerjaan Sebelumnya">
                                 <i class="fa  fa-mail-reply"></i> Pekerjaan Sebelumnya
                             </a>
-                            <a href="#" onclick="toggle_visibility('pengalaman');" class="btn btn-app bg-blue">
+                            <a href="#" onclick="toggle_visibility('pengalaman');" class="btn btn-app bg-blue" data-toggle="tooltip" title="Pengalaman">
                                 <i class="fa fa-globe"></i> Pengalaman
                             </a>
-                            <a href="#" onclick="toggle_visibility('dokumen');" class="btn btn-app bg-navy">
+                            <a href="#" onclick="toggle_visibility('dokumen');" class="btn btn-app bg-navy" data-toggle="tooltip" title="Dokumen Registrasi">
                                 <i class="fa fa-file-text"></i> Dokumen Registrasi
                             </a>
                         </div> 
                     </div><!--/.row (main row) -->
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <form role="form" onsubmit="valid()" name="myform" id="myform">
+                            <form role="form" onsubmit="valid()" name="myform" id="myform" action="proses/index" method="post">
                                 <!--PERSONAL DATA-->
                                 <div class="box box-solid box-danger" id="personal" ><!--style="display:none;"-->
                                     <div class="box-header">
@@ -103,7 +112,7 @@
                                             <div class="col-md-5">
                                                 <div class="form-group">
                                                     <label>Kode TKI:</label>
-                                                    <input type="text" id="" name="nama" class="form-control" placeholder="Kode TKI" required>               
+                                                    <input type="text" id="" name="kode" class="form-control" placeholder="Kode TKI" required>               
                                                 </div>
                                            
                                                 <div class="form-group">
@@ -130,7 +139,7 @@
                                             <div class="col-md-7">
                                                 <div class="form-group">
                                                     <label for="preview_gambar">Foto Calon TKI:</label>
-                                                    <input type="file" name="gambar" id="preview_gambar" class="filestyle" data-buttonName="btn-danger" required>
+                                                    <input type="file" name="foto" id="preview_gambar" class="filestyle" data-buttonName="btn-danger" required>
                                                 </div>
                                                 <img src="" id="gambar_nodin" width="200" alt="" />
                                             </div>
@@ -140,7 +149,7 @@
                                             <div class="col-sm-3">
                                                 <div class="form-group">
                                                     <label>Alamat:</label>
-                                                    <textarea class="form-control" rows="3" placeholder="Alamat..." required></textarea>             
+                                                    <textarea class="form-control" name="alamat" rows="3" placeholder="Alamat..." required></textarea>             
                                                 </div>
                                             </div>
 
@@ -151,7 +160,7 @@
                                                 ?>
                                                 <div class="form-group">
                                                     <label>Provinsi:</label>
-                                                    <select class="form-control" id="prov" required>
+                                                    <select class="form-control" id="prov" name="prov" required>
                                                         <option value="">Pilih Provinsi...</option>
                                                         <?php while ($row = mysql_fetch_array($wilayah)): ?>
                                                             <option value="<?= $row['kode_prov']; ?>"/><?php echo $row['nm_prov']; ?></option>
@@ -162,7 +171,7 @@
                                             <div class="col-sm-3">
                                                 <div class="form-group">
                                                     <label>Kabupaten:</label>
-                                                    <select class="form-control" id="kab" >
+                                                    <select class="form-control" id="kab" name="kab">
                                                         <option value="">Pilih Kabupaten...</option>
                                                     </select>
                                                 </div>
@@ -170,7 +179,7 @@
                                             <div class="col-sm-3">
                                                 <div class="form-group">
                                                     <label>Kecamatan:</label>
-                                                    <select class="form-control" id="kec" required>
+                                                    <select class="form-control" id="kec" name="kec">
                                                         <option value="">Pilih Kecamatan...</option>
                                                     </select>
                                                 </div>
@@ -212,7 +221,7 @@
                                                 Laki-laki
                                             </label>&nbsp;&nbsp;
                                             <label>
-                                                <input type="radio" name="agama" class="flat-red"/>                                                    
+                                                <input type="radio" name="jenis" class="flat-red"/>                                                    
                                                 Perempuan
                                             </label>&nbsp;&nbsp;                   
                                         </div>
@@ -232,17 +241,17 @@
 
                                         <div class="form-group">
                                             <label>No. KTP:</label>
-                                            <input type="text" id="" name="nama" class="form-control auto" placeholder="Nomor KTP" data-a-sep="" required>                              
+                                            <input type="text" id="" name="no_ktp" class="form-control auto" placeholder="Nomor KTP" data-a-sep="" required>                              
                                         </div>
 
                                         <div class="form-group">
                                             <label>Tinggi Badan:</label>
-                                            <input type="text" id="" name="nama" class="form-control auto" placeholder="Tinggi Badan (CM)" data-a-sep="" required>                              
+                                            <input type="text" id="" name="tinggi_badan" class="form-control auto" placeholder="Tinggi Badan (CM)" data-a-sep="" required>                              
                                         </div>
 
                                         <div class="form-group">
                                             <label>Berat Badan:</label>
-                                            <input type="text" id="" name="nama" class="form-control auto" placeholder="Berat Badan (KG)" data-a-sep="" required>                               
+                                            <input type="text" id="" name="berat_badan" class="form-control auto" placeholder="Berat Badan (KG)" data-a-sep="" required>                               
                                         </div>
 
                                         <div class="form-group">
@@ -258,17 +267,17 @@
 
                                         <div class="form-group">
                                             <label>Jumlah Anak:</label>
-                                            <input type="text" id="" name="nama" class="form-control auto" placeholder="Jumlah Anak" data-a-sep="" required>                                
+                                            <input type="text" id="" name="jml_anak" class="form-control auto" placeholder="Jumlah Anak" data-a-sep="" required>                                
                                         </div>
 
                                         <div class="form-group">
                                             <label>Nama Bapak:</label>
-                                            <input type="text" id="" name="nama" class="form-control" placeholder="Nama Bapak" required>                                 
+                                            <input type="text" id="" name="bpk" class="form-control" placeholder="Nama Bapak" required>                                 
                                         </div>
 
                                         <div class="form-group">
                                             <label>Nama Ibu:</label>
-                                            <input type="text" id="" name="nama" class="form-control" placeholder="Nama Ibu" required>                                
+                                            <input type="text" id="" name="ibu" class="form-control" placeholder="Nama Ibu" required>                                
                                         </div>
                                     </div><!-- /.box-body -->
                                     <div class="box-footer pull-right">
@@ -585,23 +594,30 @@
                                 <!-- DOKUMEN -->
                                 <div class="box box-solid" id="dokumen" style="display:none;"><!--style="display:none;"-->
                                     <div class="box-header bg-navy">
-                                        <h3 class="box-title ">Dokumen Registrasi</h3>
+                                        <h3 class="box-title ">WEW</h3>
                                     </div>
                                     <div class="box-body">
                                         <div class="form-group">
                                             <label for="preview_gambar">Upload Dokumen:</label>
                                             <input type="file" name="file_" class="filestyle" data-buttonName="bg-navy" required>
                                         </div>
-                                    </div><!-- /.box-body --><br><br>
+                                        <div class="form-group"><label></label></div>
+                                        <div class="form-group"><label></label></div>
+                                        <div class="form-group">
+                                            <label></label>
+                                            <a href="javascript:void()" onclick="document.getElementById('myform').submit();" class="btn btn-primary col-md-3 pull-right" data-toggle="tooltip" title="Cetak Keseluruhan Biodata">
+                                                <i class='fa fa-print'></i>
+                                            </a>
+                                            <!--<button type="submit" class="btn btn-primary col-md-3 pull-right" data-toggle="tooltip" title="Cetak Keseluruhan Biodata"><i class='fa fa-print'></i></button>-->
+                                            
+                                        </div>
+                                    </div><!-- /.box-body -->
                                     <div class="box-footer pull-right">
-                                        <!--<a href="#" class="btn btn-primary ">
-                                            <i class="fa fa-print"></i>
-                                        </a>-->
+                                        
                                     </div>
                                 </div><!-- /.box -->
                                 <!-- END DOKUMEN -->
                                 
-                                <button type="submit" class="btn btn-primary pull-right"><i class='fa fa-print'></i></button>
                             </form>
                         </div>
                     </div>
