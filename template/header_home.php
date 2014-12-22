@@ -20,17 +20,9 @@
 	<link rel="stylesheet" href="../assets/css_home/landing-page1.css" />
 	
     <!-- Custom Fonts -->
-
 	<link rel="stylesheet" href="../assets/font-awesome-4.1.0/css/font-awesome.min.css" />
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-	
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 	<link rel="stylesheet" href="../ssets/fonts_home/museo100regular/font.css">
     <link rel="icon" href="../assets/img_home/favicon.ico" type="image/x-generic">
 	<link rel="stylesheet" href="../assets/css_home/homepage.css" />
@@ -70,7 +62,7 @@
 	
 	<style type="text/css">
             body {
-                background: url('../assets/img_home/bg.jpg') no-repeat center center fixed;
+                background: url('../assets/img/blur-background04.jpg') no-repeat center center fixed;
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
                 -o-background-size: cover;

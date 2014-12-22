@@ -29,16 +29,15 @@
                             </h1>
                             <ol class="breadcrumb">
                                 <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-                                <li class="active">Biodata</li>
+                                <li>Pilih Negara</li>
+                                <li class="active">Timur Tengah</li>
                             </ol>
                         </div>
                     </div>
                     <br>
                     <div class="row">
-                        <div class="col-md-3">
-                        </div>
                         <div class="col-md-9">
-                            <div class="pull-right">
+                            <div class="pull-left">
                                 <script>
                                     var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
                                     var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
@@ -54,13 +53,23 @@
                                 , Pukul <span id="clock"></span>
                             </div>
                         </div>
+                        <div class="col-md-3">
+                            <form action="../maintenance/" class="text-right">
+                                <div class="input-group">                                                            
+                                    <input type="text" class="form-control input-sm" placeholder="Search">
+                                    <div class="input-group-btn">
+                                        <button type="submit" name="q" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </div>                                                     
+                            </form>
+                        </div>
                     </div>
-                </div>
+                <br>
                 <!-- Main content -->
-                <section class="content">
+                <!--<section class="content">
                     <!-- Main row -->
                     <div class="row">
-                        <div class="col-xs-5 centered">
+                        <div class="col-md-7 col-md-offset-2 centered">
                             <a href="#"onclick="toggle_visibility('personal')" class="btn btn-app bg-red">
                                 <i class="fa fa-male"></i> Personal Data
                             </a>
@@ -75,6 +84,9 @@
                             </a>
                             <a href="#" onclick="toggle_visibility('pengalaman');" class="btn btn-app bg-blue">
                                 <i class="fa fa-globe"></i> Pengalaman
+                            </a>
+                            <a href="#" onclick="toggle_visibility('dokumen');" class="btn btn-app bg-navy">
+                                <i class="fa fa-file-text"></i> Dokumen Registrasi
                             </a>
                         </div> 
                     </div><!--/.row (main row) -->
@@ -463,6 +475,133 @@
                                 </div><!-- /.box -->
                                 <!-- END KEMAMPUAN -->
 
+                                <!-- JOB -->
+                                <div class="box box-solid" id="job" style="display:none;"><!--style="display:none;"-->
+                                    <div class="box-header bg-orange">
+                                        <h3 class="box-title ">Pekerjaan Sebelumnya</h3>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <label>Negara:</label>
+                                            <select name="negara" class="form-control" id="negara_sblm" required>
+                                                <option value="">Pilih Negara...</option>
+                                            </select>              
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Periode Waktu:</label>
+                                            <input type="text" id="" name="nama" class="form-control" placeholder="Periode Waktu">                             
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Name of Employer:</label>
+                                            <input type="text" id="" name="nama" class="form-control" placeholder="Name of Employer">               
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Pengalaman Kerja:</label>
+                                            <textarea class="form-control" rows="3" placeholder="Pengalaman Kerja"></textarea>             
+                                        </div>
+                                    </div><!-- /.box-body -->
+                                    <div class="box-footer pull-right">
+                                        <a href="#" onclick="toggle_visibility('kemampuan');" class="btn btn-primary ">
+                                            <i class="fa fa-arrow-left"></i>
+                                        </a>&nbsp;&nbsp;
+                                        <a href="#" onclick="toggle_visibility('pengalaman');" class="btn btn-primary">
+                                            <i class="fa fa-arrow-right"></i>
+                                        </a> 
+                                    </div>
+                                </div><!-- /.box -->
+                                <!-- END JOB -->
+
+                                <!-- PENGALAMAN -->
+                                <div class="box box-solid" id="pengalaman" style="display:none;"><!--style="display:none;"-->
+                                    <div class="box-header bg-blue">
+                                        <h3 class="box-title ">Pengalaman Kerja</h3>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <label>She/He Has Experience At:</label>
+                                            <input type="text" id="" name="nama" class="form-control" placeholder="She/He Has Experience At">                             
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Periode:</label>
+                                            <input type="text" id="" name="nama" class="form-control" placeholder="Periode">                             
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Name of Employer:</label>
+                                            <input type="text" id="" name="nama" class="form-control" placeholder="Name of Employer">               
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>She Can Do work As:</label><br>
+                                            <label>
+                                                <input type="checkbox" class="flat-blue"/>
+                                                Sewing
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="flat-blue"/>
+                                                Cleaning
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="flat-blue"/>
+                                                Washing
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="flat-blue"/>
+                                                Baby and Child Care
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="flat-blue"/>
+                                                Ironing
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="flat-blue"/>
+                                                Cooking Arabian/Indonesia Food
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="flat-blue"/>
+                                                Old Age or Bedridden Care
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="flat-blue"/>
+                                                Help Cooking Arabian/Indonesia
+                                            </label>
+                                        </div>
+                                    </div><!-- /.box-body -->
+                                    <div class="box-footer pull-right">
+                                        <a href="#" onclick="toggle_visibility('job');" class="btn btn-primary ">
+                                            <i class="fa fa-arrow-left"></i>
+                                        </a>&nbsp;&nbsp;
+                                        <a href="#" onclick="toggle_visibility('dokumen');" class="btn btn-primary">
+                                            <i class="fa fa-arrow-right"></i>
+                                        </a> 
+                                    </div>
+                                </div><!-- /.box -->
+                                <!-- END PENGALAMAN -->
+
+                                <!-- DOKUMEN -->
+                                <div class="box box-solid" id="dokumen" style="display:none;"><!--style="display:none;"-->
+                                    <div class="box-header bg-navy">
+                                        <h3 class="box-title ">Dokumen Registrasi</h3>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <label for="preview_gambar">Upload Dokumen:</label>
+                                            <input type="file" name="file_" class="filestyle" data-buttonName="bg-navy" required>
+                                        </div>
+                                    </div><!-- /.box-body -->
+                                    <div class="box-footer pull-right">
+                                        <button type="submit" class="btn btn-primary"><i class='fa fa-print'></i></button>
+                                        <!--<a href="#" class="btn btn-primary ">
+                                            <i class="fa fa-print"></i>
+                                        </a>-->
+                                    </div>
+                                </div><!-- /.box -->
+                                <!-- END DOKUMEN -->
+
                             </form>
                         </div>
                     </div>
@@ -472,8 +611,8 @@
                                 Copyright © PT QAFCO - KEDIRI 2014
                             </div>
                         </div>
-                    </footer>
-                </section><!-- /.content -->
+                    </footer>-->
+                <!--</section>--><!-- /.content -->
             </div><!-- /.row -->
         </div><!-- ./wrapper -->
 

@@ -27,6 +27,12 @@
                 background: #FFF;
                 color: #000;
             }
+            body {
+                background: url('../assets/img/blur-background04.jpg') no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
         </style>
     </head>
-        <body class="skin-blue">

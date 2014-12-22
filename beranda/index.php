@@ -17,6 +17,7 @@
             $row = mysql_fetch_assoc($cek_login);
     include "../template/header.php";
 ?>
+<body class="skin-blue">
     <!-- header logo: style can be found in header.less -->
     <header class="header">
         <a href="index" class="logo">
@@ -74,18 +75,8 @@
                 </div>
                 <br>    
                 <div class="row">
-                    <div class="col-md-3">
-                        <form action="#" class="text-right">
-                            <div class="input-group">                                                            
-                                <input type="text" class="form-control input-sm" placeholder="Search">
-                                <div class="input-group-btn">
-                                    <button type="submit" name="q" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
-                                </div>
-                            </div>                                                     
-                        </form>
-                    </div>
                     <div class="col-md-9">
-                        <div class="pull-right">
+                        <div class="pull-left">
                             <script>
                                 var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
                                 var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
@@ -101,9 +92,20 @@
                             , Pukul <span id="clock"></span>
                         </div>
                     </div>
+                    <div class="col-md-3">
+                        <form action="../maintenance/" class="text-right">
+                            <div class="input-group">                                                            
+                                <input type="text" class="form-control input-sm" placeholder="Search">
+                                <div class="input-group-btn">
+                                    <button type="submit" name="q" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>                                                     
+                        </form>
+                    </div>
                 </div>
+                <br>
                 <!-- Main content -->
-                <section class="content">
+                <!--<section class="content">-->
                     <div class="row">
                         <div class="col-xs-10 col-xs-offset-1">
                          <?php
@@ -132,7 +134,7 @@
                                     <div class="icon">
                                         <i class="ion ion-person-add"></i>
                                     </div>
-                                    <a href="../biodata/index" class="small-box-footer">
+                                    <a href="../biodata/pilih_negara" class="small-box-footer">
                                         Lanjutkan <i class="fa fa-arrow-circle-right"></i>
                                     </a>
                                 </div>
@@ -151,7 +153,7 @@
                                         <div class="icon">
                                             <i class="fa fa-briefcase"></i>
                                         </div>
-                                        <a href="#" class="small-box-footer">
+                                        <a href="../maintenance/" class="small-box-footer">
                                             Lanjutkan <i class="fa fa-arrow-circle-right"></i>
                                         </a>
                                     </div>
@@ -170,7 +172,7 @@
                                     <div class="icon">
                                         <i class="ion ion-pie-graph"></i>
                                     </div>
-                                    <a href="#" class="small-box-footer">
+                                    <a href="../maintenance/" class="small-box-footer">
                                         Lanjutkan <i class="fa fa-arrow-circle-right"></i>
                                     </a>
                                 </div>
@@ -245,7 +247,7 @@
                         </div><!-- /.col -->
                     </div>
                     <!-- /.row -->
-                </section><!-- /.content -->
+                <!--</section> /.content -->
             </div>
         </div><!-- /.row -->
         <div class="row">

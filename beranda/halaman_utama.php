@@ -1,6 +1,5 @@
 <?php include "../template/header_home.php"; ?>
 <body id="page-top" class="index">
-
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -139,10 +138,10 @@
                             } 
                             ?>
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+							<label for="inputEmail3" class="col-sm-3 control-label">Username</label>
 							
 							<div class="col-sm-9">
-								<input type="text" class="form-control" placeholder="Email" name="user" required="require">					
+								<input type="text" class="form-control" placeholder="Username" name="user" required="require">					
 							</div>
 						</div>
 
