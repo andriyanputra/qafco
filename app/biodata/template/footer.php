@@ -45,6 +45,8 @@
                 $(":file").filestyle({buttonName: "btn-danger"});
                 //Datemask dd/mm/yyyy
                 $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
+                $("#datemask1").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
+                $("#datemask2").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
                 //Select2 
                 //$(document).ready(function() { $("#kec").select2(); });
                 //image upload

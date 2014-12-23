@@ -69,7 +69,7 @@
                 <!--<section class="content">
                     <!-- Main row -->
                     <div class="row">
-                        <div class="col-md-7 col-md-offset-2 centered">
+                        <div class="col-md-8 col-md-offset-1 centered">
                         <?php if (isset($_GET['msg'])) {
                                 if ($_GET['msg'] == 'err_data') {
                                     ?>
@@ -94,6 +94,9 @@
                             <a href="#" onclick="toggle_visibility('pengalaman');" class="btn btn-app bg-blue" data-toggle="tooltip" title="Pengalaman">
                                 <i class="fa fa-globe"></i> Pengalaman
                             </a>
+                            <a href="#" onclick="toggle_visibility('passport');" class="btn btn-app bg-maroon" data-toggle="tooltip" title="Passport">
+                                <i class="fa fa-plane"></i> Passport
+                            </a>
                             <a href="#" onclick="toggle_visibility('dokumen');" class="btn btn-app bg-navy" data-toggle="tooltip" title="Dokumen Registrasi">
                                 <i class="fa fa-file-text"></i> Dokumen Registrasi
                             </a>
@@ -101,7 +104,7 @@
                     </div><!--/.row (main row) -->
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <form role="form" onsubmit="valid()" name="myform" id="myform" action="proses/index" method="post">
+                            <form role="form" onsubmit="valid()" name="myform" id="myform" action="proses/index" method="post" enctype="multipart/form-data">
                                 <!--PERSONAL DATA-->
                                 <div class="box box-solid box-danger" id="personal" ><!--style="display:none;"-->
                                     <div class="box-header">
@@ -139,7 +142,7 @@
                                             <div class="col-md-7">
                                                 <div class="form-group">
                                                     <label for="preview_gambar">Foto Calon TKI:</label>
-                                                    <input type="file" name="foto" id="preview_gambar" class="filestyle" data-buttonName="btn-danger" required>
+                                                    <input type="file" name="images" id="preview_gambar" class="filestyle" data-buttonName="btn-danger" required>
                                                 </div>
                                                 <img src="" id="gambar_nodin" width="200" alt="" />
                                             </div>
@@ -217,11 +220,11 @@
                                         <div class="form-group">
                                             <label>Jenis Kelamin:</label><br>
                                             <label>
-                                                <input type="radio" name="jenis" class="flat-red"/>
+                                                <input type="radio" name="jenis" class="flat-red" value="laki-laki" />
                                                 Laki-laki
                                             </label>&nbsp;&nbsp;
                                             <label>
-                                                <input type="radio" name="jenis" class="flat-red"/>                                                    
+                                                <input type="radio" name="jenis" class="flat-red" value="perempuan" />                                                    
                                                 Perempuan
                                             </label>&nbsp;&nbsp;                   
                                         </div>
@@ -241,7 +244,7 @@
 
                                         <div class="form-group">
                                             <label>No. KTP:</label>
-                                            <input type="text" id="" name="no_ktp" class="form-control auto" placeholder="Nomor KTP" data-a-sep="" required>                              
+                                            <input type="text" id="" name="no_ktp" class="form-control" placeholder="Nomor KTP" required>                              
                                         </div>
 
                                         <div class="form-group">
@@ -299,19 +302,19 @@
                                         </div>
                                         <div class="form-group">
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="english" class="flat-green" value="poor" />
                                                 Poor
                                             </label>
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="english" class="flat-green" value="fair" />
                                             </label>
                                             Fair
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="english" class="flat-green" value="fluent" />
                                                 Fluent
                                             </label>
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="english" class="flat-green" value="exc" />
                                                 Exc
                                             </label>
                                         </div>  
@@ -321,19 +324,19 @@
                                         </div>
                                         <div class="form-group">
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="arabic" class="flat-green" value="poor" />
                                                 Poor
                                             </label>
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="arabic" class="flat-green" value="fair" />
                                             </label>
                                             Fair
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="arabic" class="flat-green" value="fluent" />
                                                 Fluent
                                             </label>
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="arabic" class="flat-green" value="exc" />
                                                 Exc
                                             </label>
                                         </div>  
@@ -342,19 +345,19 @@
                                         </div> 
                                         <div class="form-group">
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="indonesia" class="flat-green" value="poor" />
                                                 Poor
                                             </label>
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="indonesia" class="flat-green" value="fair" />
                                             </label>
                                             Fair
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="indonesia" class="flat-green" value="fluent" />
                                                 Fluent
                                             </label>
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="indonesia" class="flat-green" value="exc" />
                                                 Exc
                                             </label>
                                         </div>  
@@ -364,19 +367,19 @@
                                         </div>
                                         <div class="form-group">
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="mandarin" class="flat-green" value="poor" />
                                                 Poor
                                             </label>
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="mandarin" class="flat-green" value="fair" />
                                             </label>
                                             Fair
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="mandarin" class="flat-green" value="fluent" />
                                                 Fluent
                                             </label>
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="mandarin" class="flat-green" value="exc" />
                                                 Exc
                                             </label>
                                         </div>  
@@ -386,19 +389,19 @@
                                         </div> 
                                         <div class="form-group">
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="hokkian" class="flat-green" value="poor" />
                                                 Poor
                                             </label>
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="hokkian" class="flat-green" value="fair" />
                                             </label>
                                             Fair
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="hokkian" class="flat-green" value="fluent" />
                                                 Fluent
                                             </label>
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="hokkian" class="flat-green" value="exc" />
                                                 Exc
                                             </label>
                                         </div>  
@@ -408,19 +411,19 @@
                                         </div> 
                                         <div class="form-group">
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="hakka" class="flat-green" value="poor" />
                                                 Poor
                                             </label>
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="hakka" class="flat-green" value="fair" />
                                             </label>
                                             Fair
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="hakka" class="flat-green" value="fluent" />
                                                 Fluent
                                             </label>
                                             <label>
-                                                <input type="radio" name="r1" class="flat-green"/>
+                                                <input type="radio" name="hakka" class="flat-green" value="exc" />
                                                 Exc
                                             </label>
                                         </div>
@@ -444,31 +447,31 @@
                                     <div class="box-body">
                                          <div class="form-group">
                                         <label>
-                                            <input type="checkbox" class="flat-purple"/>
+                                            <input type="checkbox" name="skill[]" class="flat-purple" value="sewing" />
                                             Sewing
                                         </label><br>
                                         <label>
-                                            <input type="checkbox" class="flat-purple"/>
+                                            <input type="checkbox" name="skill[]"  class="flat-purple" value="washing" />
                                             Washing
                                         </label><br>
                                         <label>
-                                            <input type="checkbox" class="flat-purple"/>
+                                            <input type="checkbox" name="skill[]" class="flat-purple" value="cleaning" />
                                             Cleaning
                                         </label><br>
                                         <label>
-                                            <input type="checkbox" class="flat-purple"/>
+                                            <input type="checkbox" name="skill[]" class="flat-purple" value="ironing" />
                                             Ironing
                                         </label><br>
                                         <label>
-                                            <input type="checkbox" class="flat-purple"/>
+                                            <input type="checkbox" name="skill[]" class="flat-purple" value="cooking" />
                                             Cooking
                                         </label><br>
                                         <label>
-                                            <input type="checkbox" class="flat-purple"/>
+                                            <input type="checkbox" name="skill[]" class="flat-purple" value="baby and child care" />
                                             Baby and Child Care
                                         </label><br>
                                         <label>
-                                            <input type="checkbox" class="flat-purple"/>
+                                            <input type="checkbox" name="skill[]" class="flat-purple" value="old age or bedridden care" />
                                             Old Age or Bedridden Care
                                         </label>
                                     </div>
@@ -491,25 +494,24 @@
                                     </div>
                                     <div class="box-body">
                                         <div class="form-group">
-                                            <label>Negara:</label>
-                                            <select name="negara" class="form-control" id="negara_sblm" required>
-                                                <option value="">Pilih Negara...</option>
-                                            </select>              
+                                            <label>Negara: </label>
+                                            <input type="text" id="" name="negara_sblm" class="form-control" placeholder="Negara">                                         
                                         </div>
 
                                         <div class="form-group">
                                             <label>Periode Waktu:</label>
-                                            <input type="text" id="" name="nama" class="form-control" placeholder="Periode Waktu">                             
+                                            <input type="text" id="" name="periode" class="form-control" placeholder="Periode Waktu">                             
                                         </div>
 
                                         <div class="form-group">
                                             <label>Name of Employer:</label>
-                                            <input type="text" id="" name="nama" class="form-control" placeholder="Name of Employer">               
+                                            <input type="text" id="" name="name_employer" class="form-control" placeholder="Name of Employer">               
                                         </div>
 
                                         <div class="form-group">
                                             <label>Pengalaman Kerja:</label>
-                                            <textarea class="form-control" rows="3" placeholder="Pengalaman Kerja"></textarea>             
+                                            <textarea class="form-control" rows="3" name="pengalaman_kerja" placeholder="Pengalaman Kerja">
+                                            </textarea>             
                                         </div>
                                     </div><!-- /.box-body -->
                                     <div class="box-footer pull-right">
@@ -529,7 +531,7 @@
                                         <h3 class="box-title ">Pengalaman Kerja</h3>
                                     </div>
                                     <div class="box-body">
-                                        <div class="form-group">
+                                        <!--<div class="form-group">
                                             <label>She/He Has Experience At:</label>
                                             <input type="text" id="" name="nama" class="form-control" placeholder="She/He Has Experience At">                             
                                         </div>
@@ -542,40 +544,40 @@
                                         <div class="form-group">
                                             <label>Name of Employer:</label>
                                             <input type="text" id="" name="nama" class="form-control" placeholder="Name of Employer">               
-                                        </div>
+                                        </div>-->
 
                                         <div class="form-group">
                                             <label>She Can Do work As:</label><br>
                                             <label>
-                                                <input type="checkbox" class="flat-blue"/>
+                                                <input type="checkbox" name="kerja_sebelum[]" class="flat-blue" value="sewing" />
                                                 Sewing
                                             </label>
                                             <label>
-                                                <input type="checkbox" class="flat-blue"/>
+                                                <input type="checkbox" name="kerja_sebelum[]" class="flat-blue" value="cleaning" />
                                                 Cleaning
                                             </label>
                                             <label>
-                                                <input type="checkbox" class="flat-blue"/>
+                                                <input type="checkbox" name="kerja_sebelum[]" class="flat-blue" value="washing" />
                                                 Washing
                                             </label>
                                             <label>
-                                                <input type="checkbox" class="flat-blue"/>
+                                                <input type="checkbox" name="kerja_sebelum[]" class="flat-blue" value="baby and child care" />
                                                 Baby and Child Care
                                             </label>
                                             <label>
-                                                <input type="checkbox" class="flat-blue"/>
+                                                <input type="checkbox" name="kerja_sebelum[]" class="flat-blue" value="ironing" />
                                                 Ironing
                                             </label>
                                             <label>
-                                                <input type="checkbox" class="flat-blue"/>
+                                                <input type="checkbox" name="kerja_sebelum[]" class="flat-blue" value="Cooking Arabian/Indonesia Food" />
                                                 Cooking Arabian/Indonesia Food
                                             </label>
                                             <label>
-                                                <input type="checkbox" class="flat-blue"/>
+                                                <input type="checkbox" name="kerja_sebelum[]" class="flat-blue" value="Old Age or Bedridden Care" />
                                                 Old Age or Bedridden Care
                                             </label>
                                             <label>
-                                                <input type="checkbox" class="flat-blue"/>
+                                                <input type="checkbox" name="kerja_sebelum[]" class="flat-blue" value="Help Cooking Arabian/Indonesia" />
                                                 Help Cooking Arabian/Indonesia
                                             </label>
                                         </div>
@@ -584,31 +586,94 @@
                                         <a href="#" onclick="toggle_visibility('job');" class="btn btn-primary ">
                                             <i class="fa fa-arrow-left"></i>
                                         </a>&nbsp;&nbsp;
-                                        <a href="#" onclick="toggle_visibility('dokumen');" class="btn btn-primary">
+                                        <a href="#" onclick="toggle_visibility('passport');" class="btn btn-primary">
                                             <i class="fa fa-arrow-right"></i>
                                         </a> 
                                     </div>
                                 </div><!-- /.box -->
                                 <!-- END PENGALAMAN -->
 
+                                <!-- PASSPORT -->
+                                <div class="box box-solid" id="passport" style="display:none;"><!--style="display:none;"-->
+                                    <div class="box-header bg-maroon">
+                                        <h3 class="box-title ">Detail Passport</h3>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="row">
+                                            <div class="form-group col-md-4 pull-left">
+                                                <label for="no_passport">No. Passport:</label>
+                                                <input type="text" name="no_passport" class="form-control"  required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Tanggal Terbit Passport:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </div>
+                                                        <input type="text" id="datemask1" name="date_terbit" class="form-control" data-inputmask="dd/mm/yyyy" data-mask required/>
+                                                    </div><!-- /.input group -->                                
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Masa Habis Passport:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </div>
+                                                        <input type="text" id="datemask2" name="date_habis" class="form-control" data-inputmask="dd/mm/yyyy" data-mask required/>
+                                                    </div><!-- /.input group -->                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lokasi_terbit">Lokasi Penerbitan Passport:</label>
+                                            <input type="text" name="lokasi_passport" class="form-control"  required>
+                                        </div>
+                                    </div><!-- /.box-body -->
+                                    <div class="box-footer pull-right">
+                                        <a href="#" onclick="toggle_visibility('pengalaman');" class="btn btn-primary ">
+                                            <i class="fa fa-arrow-left"></i>
+                                        </a>&nbsp;&nbsp;
+                                        <a href="#" onclick="toggle_visibility('dokumen');" class="btn btn-primary">
+                                            <i class="fa fa-arrow-right"></i>
+                                        </a> 
+                                    </div>
+                                </div><!-- /.box -->
+                                <!-- END PASSPORT -->
+
                                 <!-- DOKUMEN -->
                                 <div class="box box-solid" id="dokumen" style="display:none;"><!--style="display:none;"-->
                                     <div class="box-header bg-navy">
-                                        <h3 class="box-title ">WEW</h3>
+                                        <h3 class="box-title ">Dokumen Registrasi</h3>
                                     </div>
                                     <div class="box-body">
-                                        <div class="form-group">
+                                    <div class="row">
+                                        <div class="form-group col-md-4 pull-left">
+                                            <label for="preview_gambar">Jenis Dokumen:</label>
+                                            <input type="text" name="file_" class="form-control"  required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
                                             <label for="preview_gambar">Upload Dokumen:</label>
                                             <input type="file" name="file_" class="filestyle" data-buttonName="bg-navy" required>
                                         </div>
+                                    </div>
                                         <div class="form-group"><label></label></div>
                                         <div class="form-group"><label></label></div>
                                         <div class="form-group">
                                             <label></label>
-                                            <a href="javascript:void()" onclick="document.getElementById('myform').submit();" class="btn btn-primary col-md-3 pull-right" data-toggle="tooltip" title="Cetak Keseluruhan Biodata">
+                                            <a href="#" class="btn btn-primary col-md-3 pull-right" data-toggle="tooltip" title="Cetak Keseluruhan Biodata">
                                                 <i class='fa fa-print'></i>
                                             </a>
-                                            <!--<button type="submit" class="btn btn-primary col-md-3 pull-right" data-toggle="tooltip" title="Cetak Keseluruhan Biodata"><i class='fa fa-print'></i></button>-->
+                                            <!--<a href="javascript:void()" onclick="document.getElementById('myform').submit();" class="btn btn-primary col-md-3 pull-right" data-toggle="tooltip" title="Cetak Keseluruhan Biodata">
+                                                <i class='fa fa-print'></i>
+                                            </a>
+                                            <input type="submit" value="Print" name="submit" class="btn btn-primary col-md-3 pull-right" data-toggle="tooltip" title="Cetak Keseluruhan Biodata"/>-->
                                             
                                         </div>
                                     </div><!-- /.box-body -->
