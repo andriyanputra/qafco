@@ -22,12 +22,24 @@ if (!empty($_POST)) {
 ?>
 
 <?php include '../../../template/header2.php' ?>
-<div class="container">
-
-    <div class="span10 offset1">
-        <div class="row">
-            <h3>Delete a Asuransi</h3>
-        </div>
+<div class="wrapper row-offcanvas">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+    <div class="right-side strech">
+                <div class="content-header">
+                    <h1>
+                        Delete Data
+                        <small>Overview</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="index.php"><i class="fa fa-dashboard"></i>Master Data</a></li>
+                        <li class="active">Delete Data</li>
+                    </ol>
+                </div>
+            </div>
+			<br>
+			<!-- Main content -->
+            <section class="content well" style="background-color: #fff">
 
         <form class="form-horizontal" action="delete.php" method="post">
             <input type="hidden" name="kode_asuransi" value="<?php echo $kode_asuransi; ?>"/>
@@ -37,6 +49,9 @@ if (!empty($_POST)) {
                 <a class="btn" href="index.php">No</a>
             </div>
         </form>
-    </div>   
+    </section>
+    </div>
+
 </div> <!-- /container -->
+</div>
 <?php include '../../../template/footer2.php' ?>

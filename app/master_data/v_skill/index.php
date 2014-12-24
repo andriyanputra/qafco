@@ -1,54 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <link   href="../../../assets/css/bootstrap.min.css" rel="stylesheet">
-    <script src="../../../assets/js/bootstrap.min.js"></script>
-</head>
-
-<body>
-    <div class="container">
-    		<div class="row">
-    			<h3>PHP CRUD Grid</h3>
-    		</div>
-			<div class="row">
-				<p>
-					<a href="create.php" class="btn btn-success">Create</a>
-				</p>
-				
-				<table class="table table-striped table-bordered">
-		              <thead>
-		                <tr>
-		                  <th>Name</th>
-		                  <th>Email Address</th>
-		                  <th>Mobile Number</th>
-		                  <th>Action</th>
-		                </tr>
-		              </thead>
-		              <tbody>
-		              <?php 
-					   include 'database.php';
-					   $pdo = Database::connect();
-					   $sql = 'SELECT * FROM customers ORDER BY id DESC';
-	 				   foreach ($pdo->query($sql) as $row) {
-						   		echo '<tr>';
-							   	echo '<td>'. $row['name'] . '</td>';
-							   	echo '<td>'. $row['email'] . '</td>';
-							   	echo '<td>'. $row['mobile'] . '</td>';
-							   	echo '<td width=250>';
-							   	echo '<a class="btn" href="read.php?id='.$row['id'].'">Read</a>';
-							   	echo '&nbsp;';
-							   	echo '<a class="btn btn-success" href="update.php?id='.$row['id'].'">Update</a>';
-							   	echo '&nbsp;';
-							   	echo '<a class="btn btn-danger" href="delete.php?id='.$row['id'].'">Delete</a>';
-							   	echo '</td>';
-							   	echo '</tr>';
-					   }
-					   Database::disconnect();
-					  ?>
-				      </tbody>
-	            </table>
-    	</div>
-    </div> <!-- /container -->
-  </body>
-</html>
+<?php include '../../../template/header2.php' ?>
+<div class="wrapper row-offcanvas">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+    <div class="right-side strech">
+                <div class="content-header">
+                    <h1>
+                        Master Data
+                        <small>Overview</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="../../index.php"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+                        <li><a href="#">Master Data</a></li>
+                        <li class="active">Data Skill</li>
+                    </ol>
+                </div>
+            </div>
+			<br>
+			<!-- Main content -->
+            <section class="content well" style="background-color: #fff">
+    <div class="row">
+        <p>
+            <a href="create.php" class="btn btn-success">Create</a>
+        </p>
+		<div class="box">
+                                <div class="box-header">
+                                    <h3 class="box-title">SKILL</h3>
+                                </div><!-- /.box-header -->
+                                <div class="box-body table-responsive">
+                                    <table id="example1" class="table table-bordered table-striped display" >
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+            <tbody>
+                <?php
+                include 'database.php';
+                $pdo = Database::connect();
+                $sql = 'SELECT * FROM tb_skill ORDER BY kode_skill ASC';
+                foreach ($pdo->query($sql) as $row) {
+                    echo '<tr>';
+                    echo '<td>' . $row['nama_skill'] . '</td>';
+                    echo '<td width=250>';
+                    echo '<a class="btn" href="read.php?kode_skill=' . $row['kode_skill'] . '">Read</a>';
+                    echo '&nbsp;';
+                    echo '<a class="btn btn-success" href="update.php?kode_skill=' . $row['kode_skill'] . '">Update</a>';
+                    echo '&nbsp;';
+                    echo '<a class="btn btn-danger" href="delete.php?kode_skill=' . $row['kode_skill'] . '">Delete</a>';
+                    echo '</td>';
+                    echo '</tr>';
+                }
+                Database::disconnect();
+                ?>
+            </tbody>
+        <tfoot>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+		
+		
+        <div class="form-actions">
+            <a class="btn btn-info" href="../index.php">Back</a>
+        </div>
+    </div>
+	</section>
+	</div>
+	</div>
+</div> <!-- /container -->
+<?php include '../../../template/footer2.php' ?>

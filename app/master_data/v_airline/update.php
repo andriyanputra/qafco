@@ -47,12 +47,24 @@ if (!empty($_POST)) {
 
 
 <?php include '../../../template/header2.php' ?>
-<div class="container">
-
-    <div class="span10 offset1">
-        <div class="row">
-            <h3>Update a Airline</h3>
-        </div>
+<div class="wrapper row-offcanvas">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+    <div class="right-side strech">
+                <div class="content-header">
+                    <h1>
+                        Update Data
+                        <small>Overview</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="index.php"><i class="fa fa-dashboard"></i>Master Data</a></li>
+                        <li class="active">Update Data</li>
+                    </ol>
+                </div>
+            </div>
+			<br>
+			<!-- Main content -->
+            <section class="content well" style="background-color: #fff">
 
         <form class="form-horizontal" action="update.php?kode_airline=<?php echo $kode_airline ?>" method="post">
             <div class="control-group <?php echo!empty($nama_airlineError) ? 'error' : ''; ?>">
@@ -66,10 +78,11 @@ if (!empty($_POST)) {
             </div>
             <div class="form-actions">
                 <button type="submit" class="btn btn-success">Update</button>
-                <a class="btn" href="index.php">Back</a>
+                <a class="btn btn-info" href="index.php">Back</a>
             </div>
         </form>
+    </section>
     </div>
-
+</div>
 </div> <!-- /container -->
 <?php include '../../../template/footer2.php' ?>

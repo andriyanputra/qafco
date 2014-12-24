@@ -1,4 +1,4 @@
-<?php include "../template/header_home.php"; ?>
+<?php include "../../template/header_home.php"; ?>
 <body id="page-top" class="index">
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -285,4 +285,4 @@ Negara - negara untuk penempatan Tenaga Kerja Indonesia adalah sebagai berikut :
             </div>
         </section>
 
-<?php include "../template/footer_home.php"; ?>
+<?php include "../../template/footer_home.php"; ?>

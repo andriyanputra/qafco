@@ -15,7 +15,7 @@
             exit();
         }else if(mysql_num_rows($cek_login)){
             $row = mysql_fetch_assoc($cek_login);
-    include "../template/header.php";
+    include "../../template/header.php";
 ?>
 <body class="skin-blue">
     <!-- header logo: style can be found in header.less -->
@@ -191,7 +191,7 @@
                                     <div class="icon">
                                         <i class="fa fa-hdd-o"></i>
                                     </div>
-                                    <a href="../maintenance/" class="small-box-footer">
+                                    <a href="../master_data/" class="small-box-footer">
                                         Lanjutkan <i class="fa fa-arrow-circle-right"></i>
                                     </a>
                                 </div>
@@ -288,7 +288,7 @@
         </footer>
     </div><!-- ./wrapper -->
 <?php
-    include "../template/footer.php";
+    include "../../template/footer.php";
     }
 }else{
     header('Location: ../../index?msg=err_login_1');

@@ -1,53 +1,57 @@
-<?php 
-	require 'database.php';
-	$id = 0;
-	
-	if ( !empty($_GET['id'])) {
-		$id = $_REQUEST['id'];
-	}
-	
-	if ( !empty($_POST)) {
-		// keep track post values
-		$id = $_POST['id'];
-		
-		// delete data
-		$pdo = Database::connect();
-		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sql = "DELETE FROM customers  WHERE id = ?";
-		$q = $pdo->prepare($sql);
-		$q->execute(array($id));
-		Database::disconnect();
-		header("Location: index.php");
-		
-	} 
+<?php
+require 'database.php';
+$kode_majikan = 0;
+
+if (!empty($_GET['kode_majikan'])) {
+    $kode_majikan = $_REQUEST['kode_majikan'];
+}
+
+if (!empty($_POST)) {
+    // keep track post values
+    $kode_majikan = $_POST['kode_majikan'];
+
+    // delete data
+    $pdo = Database::connect();
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "DELETE FROM tb_majikan  WHERE kode_majikan = ?";
+    $q = $pdo->prepare($sql);
+    $q->execute(array($kode_majikan));
+    Database::disconnect();
+    header("Location: index.php");
+}
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <link   href="../../../assets/css/bootstrap.min.css" rel="stylesheet">
-    <script src="../../../assets/js/bootstrap.min.js"></script>
-</head>
+<?php include '../../../template/header2.php' ?>
+<div class="wrapper row-offcanvas">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+    <div class="right-side strech">
+                <div class="content-header">
+                    <h1>
+                        Delete Data
+                        <small>Overview</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="index.php"><i class="fa fa-dashboard"></i>Master Data</a></li>
+                        <li class="active">Delete Data</li>
+                    </ol>
+                </div>
+            </div>
+			<br>
+			<!-- Main content -->
+            <section class="content well" style="background-color: #fff">
 
-<body>
-    <div class="container">
-    
-    			<div class="span10 offset1">
-    				<div class="row">
-		    			<h3>Delete a Customer</h3>
-		    		</div>
-		    		
-	    			<form class="form-horizontal" action="delete.php" method="post">
-	    			  <input type="hidden" name="id" value="<?php echo $id;?>"/>
-					  <p class="alert alert-error">Are you sure to delete ?</p>
-					  <div class="form-actions">
-						  <button type="submit" class="btn btn-danger">Yes</button>
-						  <a class="btn" href="index.php">No</a>
-						</div>
-					</form>
-				</div>
-				
-    </div> <!-- /container -->
-  </body>
-</html>
+        <form class="form-horizontal" action="delete.php" method="post">
+            <input type="hidden" name="kode_majikan" value="<?php echo $kode_majikan; ?>"/>
+            <p class="alert alert-error">Are you sure to delete ?</p>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-danger">Yes</button>
+                <a class="btn" href="index.php">No</a>
+            </div>
+        </form>
+    </section>
+    </div>
+
+</div> <!-- /container -->
+</div>
+<?php include '../../../template/footer2.php' ?>

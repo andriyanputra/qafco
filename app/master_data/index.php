@@ -16,7 +16,7 @@
         }else if(mysql_num_rows($cek_login)){
             $row = mysql_fetch_assoc($cek_login);
             ?>
-<?php include '../template/header1.php' ?>
+<?php include '../../template/header1.php' ?>
 <div class="wrapper row-offcanvas">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -436,7 +436,7 @@
         </div>
     </footer>
 </div>
-<?php include '../template/footer1.php';
+<?php include '../../template/footer1.php';
 }
 }else{
     header('Location: ../../index?msg=err_login_1');

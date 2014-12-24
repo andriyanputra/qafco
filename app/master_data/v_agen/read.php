@@ -18,12 +18,25 @@ if (null == $kode_agen) {
 }
 ?>
 
-<?php include '../../template/header2.php' ?>
-<div class="container">
-    <div class="span10 offset1">
-        <div class="row">
-            <h3>Read a Agen</h3>
-        </div>
+<?php include '../../../template/header2.php' ?>
+<div class="wrapper row-offcanvas">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+    <div class="right-side strech">
+                <div class="content-header">
+                    <h1>
+                        Read Data
+                        <small>Overview</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="index.php"><i class="fa fa-dashboard"></i>Master Data</a></li>
+                        <li class="active">Read Data</li>
+                    </ol>
+                </div>
+            </div>
+			<br>
+			<!-- Main content -->
+            <section class="content well" style="background-color: #fff">
 
         <div class="form-horizontal well" >
             <div class="control-group">
@@ -51,12 +64,14 @@ if (null == $kode_agen) {
                 </div>
             </div>
             <div class="form-actions">
-                <a class="btn" href="index.php">Back</a>
+                <a class="btn btn-info" href="index.php">Back</a>
             </div>
 
 
         </div>
+    </section>
     </div>
 
 </div> <!-- /container -->
-<?php include '../../template/footer2.php' ?>
+</div>
+<?php include '../../../template/footer2.php' ?>

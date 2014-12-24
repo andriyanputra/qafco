@@ -78,7 +78,27 @@
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                     <b>Alert!</b> Maaf terjadi kesalahan proses input data, mohon untuk lebih teliti dalam input data.
                                 </div>
-                            <?php } }?>
+                            <?php } else if($_GET['msg'] == "err_foto01"){?>
+                                <div class="alert alert-danger alert-dismissable">
+                                    <i class="fa fa-ban"></i>
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    <b>Alert!</b> Mohon untuk upload foto atau gambar (jpg/jpeg/png/gif).
+                                </div>
+                        <?php }else if($_GET['msg'] == "err_foto02"){?>
+                                <div class="alert alert-danger alert-dismissable">
+                                    <i class="fa fa-ban"></i>
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    <b>Alert!</b>Ukuran foto terlalu besar.
+                                </div>
+                        <?php }else if($_GET['msg'] == "err_foto03"){ ?>
+                                <div class="alert alert-danger alert-dismissable">
+                                    <i class="fa fa-ban"></i>
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    <b>Alert!</b>Maaf terjadi kesalahan upload file foto.
+                                </div>
+                        <?php
+                                }
+                            }?>
                             <a href="#" onclick="toggle_visibility('personal');" class="btn btn-app bg-red" data-toggle="tooltip" title="Personal Data">
                                 <i class="fa fa-male"></i> Personal Data
                             </a>
@@ -104,7 +124,7 @@
                     </div><!--/.row (main row) -->
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <form role="form" onsubmit="valid()" name="myform" id="myform" action="proses/index" method="post" enctype="multipart/form-data">
+                            <form role="form" onsubmit="valid()" name="myform" id="myform" action="template/pdf/timur_tengah" method="post" enctype="multipart/form-data">
                                 <!--PERSONAL DATA-->
                                 <div class="box box-solid box-danger" id="personal" ><!--style="display:none;"-->
                                     <div class="box-header">
@@ -134,7 +154,7 @@
                                                         <div class="input-group-addon">
                                                             <i class="fa fa-calendar"></i>
                                                         </div>
-                                                        <input type="text" id="datemask" name="tgl_lahir" class="form-control" data-inputmask="dd/mm/yyyy" data-mask required/>
+                                                        <input type="text" id="datemask" name="tgl_lahir" class="form-control" data-inputmask="yyyy-mm-dd" data-mask required/>
                                                     </div><!-- /.input group -->                                
                                                 </div>
 
@@ -551,31 +571,31 @@
                                             <label>
                                                 <input type="checkbox" name="kerja_sebelum[]" class="flat-blue" value="sewing" />
                                                 Sewing
-                                            </label>
+                                            </label><br>
                                             <label>
                                                 <input type="checkbox" name="kerja_sebelum[]" class="flat-blue" value="cleaning" />
                                                 Cleaning
-                                            </label>
+                                            </label><br>
                                             <label>
                                                 <input type="checkbox" name="kerja_sebelum[]" class="flat-blue" value="washing" />
                                                 Washing
-                                            </label>
+                                            </label><br>
                                             <label>
                                                 <input type="checkbox" name="kerja_sebelum[]" class="flat-blue" value="baby and child care" />
                                                 Baby and Child Care
-                                            </label>
+                                            </label><br>
                                             <label>
                                                 <input type="checkbox" name="kerja_sebelum[]" class="flat-blue" value="ironing" />
                                                 Ironing
-                                            </label>
+                                            </label><br>
                                             <label>
                                                 <input type="checkbox" name="kerja_sebelum[]" class="flat-blue" value="Cooking Arabian/Indonesia Food" />
                                                 Cooking Arabian/Indonesia Food
-                                            </label>
+                                            </label><br>
                                             <label>
                                                 <input type="checkbox" name="kerja_sebelum[]" class="flat-blue" value="Old Age or Bedridden Care" />
                                                 Old Age or Bedridden Care
-                                            </label>
+                                            </label><br>
                                             <label>
                                                 <input type="checkbox" name="kerja_sebelum[]" class="flat-blue" value="Help Cooking Arabian/Indonesia" />
                                                 Help Cooking Arabian/Indonesia
@@ -613,7 +633,7 @@
                                                         <div class="input-group-addon">
                                                             <i class="fa fa-calendar"></i>
                                                         </div>
-                                                        <input type="text" id="datemask1" name="date_terbit" class="form-control" data-inputmask="dd/mm/yyyy" data-mask required/>
+                                                        <input type="text" id="datemask1" name="date_terbit" class="form-control" data-inputmask="yyyy-mm-dd" data-mask required/>
                                                     </div><!-- /.input group -->                                
                                                 </div>
                                             </div>
@@ -624,7 +644,7 @@
                                                         <div class="input-group-addon">
                                                             <i class="fa fa-calendar"></i>
                                                         </div>
-                                                        <input type="text" id="datemask2" name="date_habis" class="form-control" data-inputmask="dd/mm/yyyy" data-mask required/>
+                                                        <input type="text" id="datemask2" name="date_habis" class="form-control" data-inputmask="yyyy-mm-dd" data-mask required/>
                                                     </div><!-- /.input group -->                                
                                                 </div>
                                             </div>
@@ -667,12 +687,12 @@
                                         <div class="form-group"><label></label></div>
                                         <div class="form-group">
                                             <label></label>
-                                            <a href="#" class="btn btn-primary col-md-3 pull-right" data-toggle="tooltip" title="Cetak Keseluruhan Biodata">
+                                            <!--<a href="#" class="btn btn-primary col-md-3 pull-right" data-toggle="tooltip" title="Cetak Keseluruhan Biodata">
                                                 <i class='fa fa-print'></i>
                                             </a>
-                                            <!--<a href="javascript:void()" onclick="document.getElementById('myform').submit();" class="btn btn-primary col-md-3 pull-right" data-toggle="tooltip" title="Cetak Keseluruhan Biodata">
+                                            <a href="javascript:void()" onclick="document.getElementById('myform').submit();" class="btn btn-primary col-md-3 pull-right" data-toggle="tooltip" title="Cetak Keseluruhan Biodata">
                                                 <i class='fa fa-print'></i>
-                                            </a>
+                                            </a>-->
                                             <input type="submit" value="Print" name="submit" class="btn btn-primary col-md-3 pull-right" data-toggle="tooltip" title="Cetak Keseluruhan Biodata"/>-->
                                             
                                         </div>

@@ -64,12 +64,24 @@ if (!empty($_POST)) {
 
 
 <?php include '../../../template/header2.php' ?>
-<div class="container">
-
-    <div class="span10 offset1">
-        <div class="row">
-            <h3>Update a Balai Latihan Kerja Luar Negeri</h3>
-        </div>
+<div class="wrapper row-offcanvas">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+    <div class="right-side strech">
+                <div class="content-header">
+                    <h1>
+                        Update Data
+                        <small>Overview</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="index.php"><i class="fa fa-dashboard"></i>Master Data</a></li>
+                        <li class="active">Update Data</li>
+                    </ol>
+                </div>
+            </div>
+			<br>
+			<!-- Main content -->
+            <section class="content well" style="background-color: #fff">
 
         <form class="form-horizontal" action="update.php?kode_blk=<?php echo $kode_blk ?>" method="post">
             <div class="control-group <?php echo!empty($nama_blkError) ? 'error' : ''; ?>">
@@ -84,7 +96,7 @@ if (!empty($_POST)) {
             <div class="control-group <?php echo!empty($alamat_blkError) ? 'error' : ''; ?>">
                 <label class="control-label">Address</label>
                 <div class="controls">
-                    <textarea name="alamat_blk" type="text" class="form-control" rows="3" placeholder="Address..." value="<?php echo!empty($alamat_blk) ? $alamat_blk : ''; ?>"></textarea>	
+                    <textarea name="alamat_blk" type="text" class="form-control" rows="3" placeholder="Address..." value=""><?php echo!empty($alamat_blk) ? $alamat_blk : ''; ?></textarea>	
                     <?php if (!empty($alamat_blkError)): ?>
                         <span class="help-inline"><?php echo $alamat_blkError; ?></span>
                     <?php endif; ?>
@@ -101,10 +113,11 @@ if (!empty($_POST)) {
             </div>
             <div class="form-actions">
                 <button type="submit" class="btn btn-success">Update</button>
-                <a class="btn" href="index.php">Back</a>
+                <a class="btn btn-info" href="index.php">Back</a>
             </div>
         </form>
+    </section>
     </div>
-
+</div>
 </div> <!-- /container -->
 <?php include '../../../template/footer2.php' ?>

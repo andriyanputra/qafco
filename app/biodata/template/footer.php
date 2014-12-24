@@ -43,10 +43,10 @@
             $(function() {
                 //Choose file
                 $(":file").filestyle({buttonName: "btn-danger"});
-                //Datemask dd/mm/yyyy
-                $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
-                $("#datemask1").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
-                $("#datemask2").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
+                //Datemask yyyy/mm/dd
+                $("#datemask").inputmask("yyyy-mm-dd", {"placeholder": "yyyy-mm-dd"});
+                $("#datemask1").inputmask("yyyy-mm-dd", {"placeholder": "yyyy-mm-dd"});
+                $("#datemask2").inputmask("yyyy-mm-dd", {"placeholder": "yyyy-mm-dd"});
                 //Select2 
                 //$(document).ready(function() { $("#kec").select2(); });
                 //image upload
